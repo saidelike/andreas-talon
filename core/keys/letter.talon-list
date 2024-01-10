@@ -3,31 +3,33 @@ list: user.letter
 
 air:        a
 # bat:        b
-batt:       b
+# batt:       b
+byte:       b
 cap:        c
 drum:       d
 each:       e
 fine:       f
 gust:       g
 harp:       h
-# sit:        i
-ink:        i
-# jury:       j
-jig:        j
-# crunch:     k
-kid:        k
+sit:        i
+# ink:        i
+jury:       j
+# jig:        j
+crunch:     k
+# kid:        k
 look:       l
 made:       m
 near:       n
-# odd:        o
+odd:        o
 # ox:         o
-ork:        o
+# ork:        o
 pit:        p
 quench:     q
 # red:        r
-risk:       r
-# sun:        s
-sam:        s
+# risk:       r
+rat:        r
+sun:        s
+# sam:        s
 trap:       t
 urge:       u
 urch:       u
@@ -36,6 +38,6 @@ whale:      w
 plex:       x
 yank:       y
 zip:        z
-onyx:       å
-adder:      ä
-oesten:     ö
+# onyx:       å
+# adder:      ä
+# oesten:     ö
