@@ -44,3 +44,7 @@ class Actions:
         """Delete all text in the current document"""
         actions.edit.select_all()
         actions.edit.delete()
+
+    def file_post():
+        """Simulate the 'post file' cursorless command"""
+        actions.key("ctrl-end")

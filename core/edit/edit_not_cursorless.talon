@@ -44,7 +44,7 @@ paste to block:             user.paste_paragraph()
 
 # File / document
 pre file:                   edit.file_start()
-post file:                  edit.file_end()
+post file:                  user.file_post()
 take file:                  edit.select_all()
 cut file:                   user.cut_all()
 copy file:                  user.copy_all()
