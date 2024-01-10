@@ -124,6 +124,12 @@ class UserActions:
             actions.sleep("50ms")
             actions.insert(text)
 
+    def find_everywhere_next():
+        actions.user.vscode("search.action.focusNextSearchResult")
+
+    def find_everywhere_previous():
+        actions.user.vscode("search.action.focusPreviousSearchResult")
+
     def find_file(text: str = None):
         actions.user.vscode("workbench.action.quickOpen")
         if text:

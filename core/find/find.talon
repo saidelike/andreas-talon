@@ -4,8 +4,8 @@ tag: user.find
 scout for clip:             edit.find(clip.text())
 scout [<user.text>]$:       edit.find(text or "")
 
-scout all for clip:         user.find_everywhere(clip.text())
-scout all [<user.text>]$:   user.find_everywhere(text or "")
+scout eve for clip:         user.find_everywhere(clip.text())
+scout eve [<user.text>]$:   user.find_everywhere(text or "")
 
 replace [<user.text>]$:     user.find_replace(text or "")
 replace all [<user.text>]$: user.find_replace_everywhere(text or "")
@@ -17,6 +17,9 @@ replace case:               user.find_replace_toggle_preserve_case()
 
 scout last:                 edit.find_previous()
 scout next:                 edit.find_next()
+
+scout eve next:             user.find_everywhere_next()
+scout eve last:             user.find_everywhere_previous()
 
 scout hide:
     edit.find("")

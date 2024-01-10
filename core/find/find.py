@@ -15,6 +15,12 @@ class Actions:
         if text:
             actions.insert(text)
 
+    def find_everywhere_next():
+        """Find next result in entire project/all files"""
+
+    def find_everywhere_previous():
+        """Find previous result in entire project/all files"""
+
     def find_replace(text: str = None):
         """Find and replace in current file/editor"""
         actions.key("ctrl-h")
