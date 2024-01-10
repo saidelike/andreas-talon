@@ -452,6 +452,15 @@ class Actions:
         register_events(True)
         ctx.tags = ["user.help_commands"]
 
+    def help_context_main():
+        """Display contextual command info"""
+        reset()
+        refresh_context_command_map()
+        actions.user.help_hide()
+        gui_context_help.show()
+        register_events(True)
+        ctx.tags = ["user.help_commands"]
+
     def help_context(m: str):
         """Display command info for specified context"""
         global selected_context

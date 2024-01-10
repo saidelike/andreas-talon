@@ -1,5 +1,7 @@
+# "help active" is currently broken and does not show active only commands (shows the same as "help context")
 ^help active$:              user.help_active_toggle()
 ^help search <user.text>$:  user.help_search(text)
+^help context$:             user.help_context_main()
 ^help context {user.help_contexts}$: user.help_context(help_contexts)
 
 ^help <user.text> commands$: user.help_search_commands(text)
