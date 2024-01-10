@@ -26,7 +26,7 @@ app: vscode
 and win.title: /\[Terminal\]$/
 """
 
-ctx.tags = ["user.bash"]
+ctx.tags = ["user.bash", "user.tabs"]
 
 
 @ctx.action_class("user")
