@@ -57,7 +57,7 @@ cross:                      user.vscode("workbench.action.focusNextGroup")
 open (cross | split):       key(alt-enter)
 
 # Sidebar
-bar (show | hide):          user.vscode("workbench.action.toggleSidebarVisibility")
+bar (toggle | switch | show | hide): user.vscode("workbench.action.toggleSidebarVisibility")
 bar explore:                user.vscode("workbench.view.explorer")
 bar extensions:             user.vscode("workbench.view.extensions")
 bar outline:                user.vscode("outline.focus")
