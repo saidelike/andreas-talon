@@ -1,4 +1,11 @@
 {
     "python.defaultInterpreterPath": "~\\AppData\\Roaming\\talon\\venv\\3.11\\Scripts\\python.exe",
-    "python.analysis.stubPath": "~\\AppData\\Roaming\\talon\\venv\\3.11\\Lib\\site-packages"
+    "python.analysis.stubPath": "~\\AppData\\Roaming\\talon\\venv\\3.11\\Lib\\site-packages",
+    "editor.formatOnSave": true,
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "[talon]": {
+      "editor.defaultFormatter": "AndreasArvidsson.andreas-talon"
+    }
 }
