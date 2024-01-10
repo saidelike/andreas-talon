@@ -21,7 +21,7 @@ scroll speed down:          user.mouse_scroll_speed_decrease()
 # Eye tracking
 track on:                   user.mouse_control_toggle(true)
 track off:                  user.mouse_control_toggle(false)
-tracking:                   user.mouse_control_toggle()
+track:                      user.mouse_control_toggle()
 track gaze:                 tracking.control_gaze_toggle(true)
 track head:                 tracking.control_gaze_toggle(false)
 track debug:                tracking.control_debug_toggle()
