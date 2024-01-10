@@ -1,57 +1,74 @@
 {
-    "pop": {
-        "sounds": ["pop"],
-        "threshold": {
-            ">power": 10,
-            ">probability": 0.99
-        },
-        "throttle": {
-            "pop": 0.1
-        }
-    },
     "cluck": {
-        "sounds": ["cluck"],
-        "threshold": {
-            ">power": 40,
-            ">probability": 0.99
-        },
-        "throttle": {
-            "cluck": 0.2,
-            "pop": 0.2
-        }
+      "sounds": ["alveolar_click"],
+      "threshold": {
+        ">power": 20,
+        ">probability": 0.999
+      },
+      "throttle": {
+        "cluck": 0.12
+      }
+    },
+    "tut": {
+      "sounds": ["lateral_click"],
+      "threshold": {
+        ">power": 15,
+        ">probability": 0.9
+      },
+      "throttle": {
+        "tut": 0.1
+      }
+    },
+    "pop": {
+      "sounds": ["pop_noise"],
+      "threshold": {
+        ">power": 6,
+        ">probability": 0.96
+      },
+      "throttle": {
+        "pop": 0.2
+      }
     },
     "hiss": {
-        "sounds": ["hiss"],
-        "threshold": {
-            ">power": 15,
-            ">probability": 0.95
-        },
-        "graceperiod": 0.05,
-        "grace_threshold": {
-            ">power": 10
-        }
+      "sounds": ["hiss_noise"],
+      "threshold": {
+        ">power": 10,
+        ">probability": 0.992,
+        ">f0": 5000,
+        "<f1": 1000,
+        ">f2": 5000
+      },
+      "graceperiod": 0.2,
+      "grace_threshold": {
+        ">power": 6,
+        ">f2": 5000
+      }
     },
     "shush": {
-        "sounds": ["shush"],
-        "threshold": {
-            ">power": 15,
-            ">probability": 0.95
-        },
-        "graceperiod": 0.05,
-        "grace_threshold": {
-            ">power": 10
-        }
+      "sounds": ["shush_noise"],
+      "threshold": {
+        ">power": 16,
+        ">probability": 0.991,
+        ">f0": 2700,
+        "<f1": 500,
+        ">f2": 2600
+      },
+      "graceperiod": 0.2,
+      "grace_threshold": {
+        ">power": 8,
+        ">f2": 2600
+      }
     },
     "speech": {
-        "sounds": ["speech"],
-        "threshold": {
-            ">power": 15,
-            ">probability": 0.95
-        },
-        "throttle": {
-            "pop": 0.3,
-            "shush": 0.3,
-            "hiss": 0.3
-        }
+      "sounds": ["speech"],
+      "threshold": {
+        ">power": 15,
+        ">probability": 0.95
+      },
+      "throttle": {
+        "pop": 0.1,
+        "shush": 0.3,
+        "hiss": 0.3
+      }
     }
-}
+  }  

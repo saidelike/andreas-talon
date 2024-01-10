@@ -23,6 +23,9 @@ class UserActions:
         if not last_command_is_sleep():
             actions.core.repeat_phrase()
 
+    def noise_tut():
+        actions.user.cancel_in_flight_phrase_loud()
+
     def noise_shush_start():
         global shush_start
         shush_start = time.perf_counter()
@@ -57,6 +60,9 @@ class Actions:
 
     def noise_cluck():
         """Noise cluck"""
+
+    def noise_tut():
+        """Noise tut"""
 
     def noise_shush_start():
         """Noise shush started"""
