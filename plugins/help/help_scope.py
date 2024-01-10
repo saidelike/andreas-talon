@@ -34,8 +34,9 @@ def gui(gui: imgui.GUI):
             value = scope.get(key)
             print_value(gui, key, value, ignore)
     gui.spacer()
-    if gui.button("Hide"):
-        actions.user.help_scope_toggle()
+    # Hiding the button as we don't enable the "user.help_commands" tag
+    # if gui.button("Hide"):
+    #     actions.user.help_scope_toggle()
 
 
 def print_value(gui: imgui.GUI, path: str, value, ignore: set[str] = {}):

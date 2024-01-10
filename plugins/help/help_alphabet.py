@@ -12,8 +12,9 @@ def gui(gui: imgui.GUI):
     for key, val in alphabet.items():
         gui.text(f"{val}:  {key}")
     gui.spacer()
-    if gui.button("Hide"):
-        actions.user.help_alphabet_toggle()
+    # Hiding the button as we don't enable the "user.help_commands" tag
+    # if gui.button("Hide"):
+    #     actions.user.help_alphabet_toggle()
 
 
 @mod.action_class

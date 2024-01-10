@@ -17,8 +17,9 @@ def gui(gui: imgui.GUI):
             f"{name.ljust(30)}{actions.user.format_text('one two three', formatters[name])}"
         )
     gui.spacer()
-    if gui.button("Hide"):
-        actions.user.help_formatters_toggle()
+    # Hiding the button as we don't enable the "user.help_commands" tag
+    # if gui.button("Hide"):
+    #     actions.user.help_formatters_toggle()
 
 
 @mod.action_class
