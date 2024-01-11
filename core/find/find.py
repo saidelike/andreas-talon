@@ -56,3 +56,9 @@ class Actions:
 
     def find_reference_next():
         """Find next result in referenced symbol"""
+
+    def find_definition_previous():
+        """Find previous result in followed/definition symbol"""
+
+    def find_definition_next():
+        """Find next result in followed/definition symbol"""

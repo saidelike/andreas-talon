@@ -21,8 +21,11 @@ scout next:                 edit.find_next()
 scout eve last:             user.find_everywhere_previous()
 scout eve next:             user.find_everywhere_next()
 
-(define|follow) last:       user.find_reference_previous()
-(define|follow) next:       user.find_reference_next()
+reference last:             user.find_reference_previous()
+reference next:             user.find_reference_next()
+
+(define|follow) last:       user.find_definition_previous()
+(define|follow) next:       user.find_definition_next()
 
 scout hide:
     edit.find("")

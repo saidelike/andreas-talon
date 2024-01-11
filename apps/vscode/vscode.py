@@ -155,10 +155,16 @@ class UserActions:
         actions.key("ctrl-alt-enter")
 
     def find_reference_previous():
-        actions.user.vscode("goToPreviousReference")
+        actions.key("shift-f4")
 
     def find_reference_next():
-        actions.user.vscode("goToNextReference")
+        actions.key("f4")
+
+    def find_definition_previous():
+        actions.user.vscode("references-view.previous")
+
+    def find_definition_next():
+        actions.user.vscode("references-view.next")
 
     # ----- Tabs -----
     def tab_back():
