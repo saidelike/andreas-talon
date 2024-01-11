@@ -10,6 +10,8 @@
 # Special keys.
 enter | okay:               key(enter)
 tab:                        key(tab)
+# speed up navigating in reverse order between fields
+shab:                       key(shift-tab)
 
 # Special symbols
 new line [symbol]:          "\\n"
