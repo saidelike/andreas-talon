@@ -144,8 +144,8 @@ tab {user.letter} [{user.letter}]:
     user.vscode("andreas.focusTab", "{letter_1}{letter_2 or ''}")
 
 # Cursor
-cursor back:                user.vscode("cursorUndo")
-cursor forward:             user.vscode("cursorRedo")
+(cursor back|curse undo):   user.vscode("cursorUndo")
+(cursor forward|curse redo): user.vscode("cursorRedo")
 cursor up:                  user.vscode("editor.action.insertCursorAbove")
 cursor down:                user.vscode("editor.action.insertCursorBelow")
 cursor lines:               user.vscode("editor.action.insertCursorAtEndOfEachLineSelected")
