@@ -154,6 +154,12 @@ class UserActions:
     def find_replace_confirm_all():
         actions.key("ctrl-alt-enter")
 
+    def find_reference_previous():
+        actions.key("shift-f12")
+
+    def find_reference_next():
+        actions.key("f12")
+
     # ----- Tabs -----
     def tab_back():
         actions.user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")

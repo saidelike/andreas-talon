@@ -18,8 +18,11 @@ replace case:               user.find_replace_toggle_preserve_case()
 scout last:                 edit.find_previous()
 scout next:                 edit.find_next()
 
-scout eve next:             user.find_everywhere_next()
 scout eve last:             user.find_everywhere_previous()
+scout eve next:             user.find_everywhere_next()
+
+(define|follow) last:       user.find_reference_previous()
+(define|follow) next:       user.find_reference_next()
 
 scout hide:
     edit.find("")
