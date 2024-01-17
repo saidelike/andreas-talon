@@ -70,3 +70,13 @@ class Actions:
         actions.user.select_word_right()
         actions.sleep("50ms")
         actions.edit.delete()
+
+    # XXX this could be improved to delete the word on the left or right
+    # depending if the cursor is close to a special character and a word is on the other side
+    def delete_selection_or_word():
+        """Delete selection or word under cursor (simulates 'chuck this')"""
+        text = actions.edit.selected_text()
+        if len(text) > 0:
+            actions.edit.delete()
+        else:
+            actions.user.delete_word_right()

@@ -1,6 +1,9 @@
 not tag: user.cursorless
 -
 
+# Selection
+chuck this:                 user.delete_selection_or_word()
+
 # ----- Word -----
 take token:                 edit.select_word()
 cut token:                  user.cut_word()
