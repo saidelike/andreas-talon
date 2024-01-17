@@ -3,23 +3,23 @@ tag: user.find
 
 scout for clip:             edit.find(clip.text())
 scout [<user.text>]$:       edit.find(text or "")
+scout last:                 edit.find_previous()
+scout next:                 edit.find_next()
 
 scout eve for clip:         user.find_everywhere(clip.text())
 scout eve [<user.text>]$:   user.find_everywhere(text or "")
+scout eve last:             user.find_everywhere_previous()
+scout eve next:             user.find_everywhere_next()
 
+# replace for clip:     user.find_replace(clip.text())
 replace [<user.text>]$:     user.find_replace(text or "")
-replace all [<user.text>]$: user.find_replace_everywhere(text or "")
+# replace eve for clip:       user.find_replace_everywhere(clip.text())
+replace eve [<user.text>]$: user.find_replace_everywhere(text or "")
 
 scout case:                 user.find_toggle_match_by_case()
 scout word:                 user.find_toggle_match_by_word()
 scout expression:           user.find_toggle_match_by_regex()
 replace case:               user.find_replace_toggle_preserve_case()
-
-scout last:                 edit.find_previous()
-scout next:                 edit.find_next()
-
-scout eve last:             user.find_everywhere_previous()
-scout eve next:             user.find_everywhere_next()
 
 reference last:             user.find_reference_previous()
 reference next:             user.find_reference_next()
