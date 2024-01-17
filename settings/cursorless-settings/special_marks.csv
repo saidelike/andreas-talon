@@ -1,9 +1,0 @@
-Spoken form, Cursorless identifier
-source, previousSource
-last, previousTarget
-this | dis, currentSelection
-down, lineNumberRelativeDown
-row, lineNumberModulo100
-up, lineNumberRelativeUp
-nothing, nothing
-special, unknownSymbol
