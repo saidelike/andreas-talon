@@ -21,11 +21,11 @@ mod.list("rango_without_target_action", "List of Rango actions used WITHOUT a ta
 # https://github.com/david-tejada/rango
 ctx.lists["user.rango_with_target_action"] = {
     "click": "clickElement",
-    "open": "openInNewTab",
+    "open": "openInNewTab", # rango default is "blank"
     "stash": "openInBackgroundTab",
     "show": "showLink",
     "hover": "hoverElement",
-    "copy": "copyLink",
+    "copy": "copyLink", # rango default is "copy [link]"
     "copy mark": "copyMarkdownLink",
     "copy text": "copyElementTextContent",
     "crown": "scrollElementToTop",
@@ -33,28 +33,28 @@ ctx.lists["user.rango_with_target_action"] = {
     "center": "scrollElementToCenter",
     "upper": "scrollUpAtElement",
     "downer": "scrollDownAtElement",
-    "hunt include": "includeExtraSelectors",
-    "hunt exclude": "excludeExtraSelectors",
+    "hunt include": "includeExtraSelectors", # rango default is "include"
+    "hunt exclude": "excludeExtraSelectors", # rango default is "exclude"
 }
 
 ctx.lists["user.rango_without_target_action"] = {
-    "rango single": "includeSingleLetterHints",
-    "rango double": "excludeSingleLetterHints",
-    "hunt": "toggleHints",
-    "hunt refresh": "refreshHints",
-    "hover nothing": "unhoverAll",
+    "rango single": "includeSingleLetterHints", # rango default is "hint exclude singles"
+    "rango double": "excludeSingleLetterHints", # rango default is "hint include singles"
+    "hunt": "toggleHints", # rango default is hints "(toggle | switch)"
+    "hunt refresh": "refreshHints", # rango default is "hints refresh"
+    "hover nothing": "unhoverAll", # rango default is "dismiss"
     "tab clone": "cloneCurrentTab",
-    "upper again": "scrollUpAtElement",
-    "downer again": "scrollDownAtElement",
-    "hunt extra": "displayExtraHints",
-    "hunt more": "displayExcludedHints",
-    "hunt less": "displayLessHints",
-    "hunt save": "confirmSelectorsCustomization",
-    "hunt reset": "resetCustomSelectors",
-    "hunt bigger": "increaseHintSize",
-    "hunt smaller": "decreaseHintSize",
-    "hunt some more": "includeOrExcludeMoreSelectors",
-    "hunt some less": "includeOrExcludeLessSelectors",
+    "upper again": "scrollUpAtElement", # rango default is "up again"
+    "downer again": "scrollDownAtElement", # rango default is "down again"
+    "hunt extra": "displayExtraHints", # rango default is "hint extra"
+    "hunt more": "displayExcludedHints", # rango default is "hint more"
+    "hunt less": "displayLessHints", # rango default is "hint less"
+    "hunt save": "confirmSelectorsCustomization", # rango default is "custom hints save"
+    "hunt reset": "resetCustomSelectors", # rango default is "custom hints reset"
+    "hunt bigger": "increaseHintSize", # rango default is "hint bigger"
+    "hunt smaller": "decreaseHintSize", # rango default is "hint smaller"
+    "hunt some more": "includeOrExcludeMoreSelectors", # rango default is "some more"
+    "hunt some less": "includeOrExcludeLessSelectors", # rango default is "some less"
 }
 
 url_pattern = re.compile(r"https?://\S+")
