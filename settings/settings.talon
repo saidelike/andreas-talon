@@ -34,9 +34,10 @@ settings():
     user.gui_max_cols = 168
 
     # Help gui
-    user.help_max_command_lines_per_page = 50
-    user.help_max_contexts_per_page = 50
-    user.help_scope_max_length = 80
+    user.help_max_command_lines_per_page = 20
+    user.help_max_contexts_per_page = 25
+    # this is the max width of the help scope window
+    user.help_scope_max_length = 100
 
     # Command history
     user.command_history_size = 50
