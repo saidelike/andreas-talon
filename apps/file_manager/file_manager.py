@@ -4,6 +4,7 @@ from os import path, environ
 mod = Module()
 mod.tag("file_manager", "Tag for enabling generic file management commands")
 mod.list("path", "List of the users favorite paths")
+mod.list("custom_path", "List of custom paths")
 
 ctx = Context()
 
@@ -139,10 +140,17 @@ def on_ready():
         **{p.lower(): path.join(user_path, p) for p in user_dirs},
         **common_paths,
         **os_paths,
+        # **ctx.lists["user.custom_paths"],
     }
 
     # for k, v in sorted(ctx.lists["user.path"].items(), key=lambda i: i[1]):
     #     print(f"{k.ljust(20)}{v}")
+
+
+@mod.capture(rule="{user.path} | {user.custom_path}")
+def path_any(m) -> str:
+    "Any of the supported paths"
+    return m[0]
 
 
 app.register("ready", on_ready)

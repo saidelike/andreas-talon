@@ -12,9 +12,9 @@ file rename:                key(f2)
 open home:
     app.tab_open()
     user.file_manager_go_home()
-open {user.path}:
+open <user.path_any>:
     app.tab_open()
-    user.file_manager_go(path)
+    user.file_manager_go(path_any)
 
 file copy name:
     key(f2)

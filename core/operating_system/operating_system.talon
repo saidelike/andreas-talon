@@ -12,8 +12,8 @@ open settings:              app.preferences()
 open {user.launch_command}:
     user.exec(launch_command)
 
-open path {user.path}:
-    user.file_manager_open(path)
+open path <user.path_any>:
+    user.file_manager_open(path_any)
 
 open browser {user.webpage}:
     user.browser_open(webpage)
