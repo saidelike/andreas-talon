@@ -1,4 +1,4 @@
-from talon import Module, actions, Module, scope, settings
+from talon import Module, actions, app, Module, scope, settings, ui
 from ...core.imgui import imgui
 
 mod = Module()
@@ -10,7 +10,8 @@ setting_max_length = mod.setting(
 )
 
 
-@imgui.open(x=0)
+# this places it in the top left corner of my right screen
+@imgui.open(screen=ui.screen.screens()[2], x=0.0, y=0.0)
 def gui(gui: imgui.GUI):
     gui.header("Scope")
     gui.line(bold=True)
@@ -68,3 +69,10 @@ class Actions:
             gui.hide()
         else:
             gui.show()
+
+
+def on_ready():
+    actions.user.help_scope_toggle()
+
+
+app.register("ready", on_ready)

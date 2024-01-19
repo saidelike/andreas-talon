@@ -1,4 +1,4 @@
-from talon import Module, Context, actions, clip, app, cron, settings
+from talon import Module, Context, actions, clip, app, cron, settings, ui
 from talon.skia.image import Image
 from talon.clip import MimeData
 from dataclasses import dataclass
@@ -75,7 +75,14 @@ def update():
     shrink()
 
 
-@imgui.open(numbered=True)
+# this places it in the middle top of my right screen
+# as 0.35 is 35% of the screen width
+@imgui.open(
+    screen=ui.screen.screens()[2],
+    x=0.35,
+    y=0.00,
+    numbered=True,
+)
 def gui(gui: imgui.GUI):
     global clicked_num
     max_rows = settings.get("user.clipboard_manager_max_rows")
@@ -256,3 +263,11 @@ def is_image(mime: MimeData):
 
 
 app.register("ready", lambda: cron.interval("100ms", update))
+
+
+def on_ready():
+    actions.user.clipboard_manager_toggle_sticky()
+    actions.user.clipboard_manager_toggle()
+
+
+app.register("ready", on_ready)
