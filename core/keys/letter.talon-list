@@ -3,8 +3,8 @@ list: user.letter
 
 air:        a
 # bat:        b
-# batt:       b
-byte:       b
+batt:       b
+#byte:       b
 cap:        c
 drum:       d
 each:       e
