@@ -86,6 +86,9 @@ hide all:
     user.vscode("workbench.action.closePanel")
     user.vscode("closeFindWidget")
 
+# Display
+wrap (switch|toggle):       user.vscode("editor.action.toggleWordWrap")
+
 # Files / Folders
 folder open:                user.vscode("workbench.action.files.openFolder")
 folder add:                 user.vscode("workbench.action.addRootFolder")
