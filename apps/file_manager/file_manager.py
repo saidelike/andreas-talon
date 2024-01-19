@@ -140,7 +140,6 @@ def on_ready():
         **{p.lower(): path.join(user_path, p) for p in user_dirs},
         **common_paths,
         **os_paths,
-        # **ctx.lists["user.custom_paths"],
     }
 
     # for k, v in sorted(ctx.lists["user.path"].items(), key=lambda i: i[1]):
