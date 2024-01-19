@@ -1,10 +1,12 @@
 list: user.symbol
 -
 
+# these are all the symbols we can say with just one word
+# and they are useful with cursorless when a hat is on top of them
 void:              space
 dot:               .
 point:             .
-drip:              ,
+comma:             ,
 stack:             :
 semi:              ;
 score:             _
@@ -31,18 +33,18 @@ euro sign:         €
 
 single:            "'"
 double:            '"'
-quote:             '"'
+#quote:             '"'
 brick:             `
 
 slash:             /
 pipe:              |
-pike:              \
+backslash:         \
 
-paren:             (
-raren:             )
-brace:             {
-race:              }
-square:            [
-rare:              ]
-angle:             <
-rangle:            >
+leper:             (
+repper:            )
+lacer:             {
+racer:             }
+lacker:            [
+racker:            ]
+langle:            <
+wrangle:           >
