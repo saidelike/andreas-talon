@@ -1,5 +1,9 @@
+# this file is only active when the "user"-defined "firefox" app is enabled
 app: firefox
 -
+# enable the "browser" tag to inherit all its features:
+# zoom, browse tabs, find text, and navigate forward/backward.
+# we also want to scroll and use Rango
 tag(): browser
 tag(): user.scroll
 tag(): user.rango_direct_clicking

@@ -1,3 +1,4 @@
+# this file is only active when the Talon-defined "browser" tag is enabled
 tag: browser
 -
 # in a browser, we want to be able to zoom, browse tabs, find text, and navigate forward/backward
