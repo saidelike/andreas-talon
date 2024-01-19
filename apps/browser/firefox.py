@@ -21,6 +21,7 @@ mod.list("rango_without_target_action", "List of Rango actions used WITHOUT a ta
 # https://github.com/david-tejada/rango
 ctx.lists["user.rango_with_target_action"] = {
     "click": "clickElement",
+    "flick": "focusElement",
     "blank": "openInNewTab",
     "stash": "openInBackgroundTab",
     "show": "showLink",
