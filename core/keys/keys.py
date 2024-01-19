@@ -89,6 +89,8 @@ ctx_win.matches = r"""
 os: windows
 """
 
+# https://scresat.github.io/navigation/Python/12.+Regex+Sub+Method+and+VERBOSE+Mode.html
+# These characters need an appended space on Windows?
 KEY_REPLACEMENT_RE = re.compile(r"([`^~])")
 
 

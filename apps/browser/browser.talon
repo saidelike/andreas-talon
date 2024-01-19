@@ -1,5 +1,6 @@
 tag: browser
 -
+# in a browser, we want to be able to zoom, browse tabs, find text, and navigate forward/backward
 tag(): user.zoom
 tag(): user.tabs
 tag(): user.find
