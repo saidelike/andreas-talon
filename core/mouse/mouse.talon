@@ -4,7 +4,7 @@ drag:                       mouse_drag()
 touch:                      user.mouse_click("left")
 duke:                       user.mouse_click("double")
 righty:                     user.mouse_click("right")
-midd:                       user.mouse_click("middle")
+# midd:                       user.mouse_click("middle")
 # mimic the "stash" command from rango to open a link in a non focused new tab
 # then we can use the repeater parrot sound in order to opened several links
 stash:                      user.mouse_click("control")
