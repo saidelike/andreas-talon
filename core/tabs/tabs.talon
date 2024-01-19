@@ -11,7 +11,7 @@ tab left:                   user.tab_move_left()
 tab right:                  user.tab_move_right()
 tab new:                    app.tab_open()
 tab clone:                  user.tab_duplicate()
-tab reopen:                 app.tab_reopen()
+tab restore:                app.tab_reopen()
 tab split:                  app.tab_detach()
 
 tab close:                  app.tab_close()
