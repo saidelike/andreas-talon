@@ -7,7 +7,7 @@ ctx = Context()
 
 matching_pairs = {
     "round":    ["(", ")"],
-    "index":    ["[", "]"],
+    "box":      ["[", "]"],
     "diamond":  ["<", ">"],
     "curly":    ["{", "}"],
     "twin":     ["'", "'"],
