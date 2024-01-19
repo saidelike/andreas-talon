@@ -1,4 +1,4 @@
-from talon import Module, Context, screen, ui, cron, app, actions
+from talon import Module, Context, screen, ui, cron, app, actions, settings
 from talon.canvas import Canvas
 from datetime import datetime
 import os
