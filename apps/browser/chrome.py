@@ -20,7 +20,9 @@ app: chrome
 ctx.tags = ["browser"]
 
 
+# these are Talon-defined "browser" actions (only grouped for clarity) that we override
 @ctx.action_class("browser")
 class BrowserActions:
+    # Open a private browsing window
     def open_private_window():
         actions.key("ctrl-shift-n")

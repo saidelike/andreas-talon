@@ -3,7 +3,7 @@ from talon import Module, Context, actions, app
 mod = Module()
 ctx = Context()
 
-# this context is only active when the "browser" tag is enabled
+# this context is only active when the Talon-defined "browser" tag is enabled
 ctx.matches = r"""
 tag: browser
 """
@@ -94,9 +94,8 @@ class EditActions:
         actions.key("ctrl-end")
 
 
-# these are general "user" actions that we override here
-# to call our browser implementation
-# TODO: why is this needed? if we comment this and say go back, it still works in Firefox
+# these are "user" actions inherited when the "navigation" tag is enabled
+# that we override to call our browser implementation
 @ctx.action_class("user")
 class UserActions:
     def go_back():

@@ -12,6 +12,7 @@ half down:                  user.scroll_down_half_page()
 full up:                    user.scroll_up_page()
 full down:                  user.scroll_down_page()
 
+# these can be stopped with the "stop" command
 flow up:                    user.scroll_up_continuous()
 flow down:                  user.scroll_down_continuous()
 
