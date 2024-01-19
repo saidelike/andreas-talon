@@ -13,3 +13,17 @@ snip link [<user.text>]:    user.code_markdown_link(text or "")
 {user.markdown_pair} line:
     edit.select_line()
     user.delimiters_pair_wrap_selection_with(markdown_pair, markdown_pair)
+
+# Titles levels
+level one:
+    edit.line_start()
+    "# "
+level two:
+    edit.line_start()
+    "## "
+level three:
+    edit.line_start()
+    "### "
+level four:
+    edit.line_start()
+    "#### "
