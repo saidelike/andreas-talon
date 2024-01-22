@@ -129,6 +129,20 @@ git pull requests:          user.git_open_url("PullRequests")
 git diff files:             user.vscode("git.openAllChanges")
 git open:                   user.vscode("git.openFile")
 
+# Git commit
+open change:                user.vscode("git.openChange")
+next change:                user.vscode("workbench.action.compareEditor.nextChange")
+(previous|last) change:     user.vscode("workbench.action.compareEditor.previousChange")
+
+# Git merge
+# https://github.com/pokey/pokey_talon/blob/45d1071f217417177ef73cba07f2f5653b6f994f/apps/vscode/vscode.talon#L411
+accept current:             user.vscode("merge-conflict.accept.current")
+accept incoming:            user.vscode("merge-conflict.accept.incoming")
+accept both:                user.vscode("merge-conflict.accept.both")
+accept all current:         user.vscode("merge-conflict.accept.all-current")
+accept all incoming:        user.vscode("merge-conflict.accept.all-incoming")
+conflict next:              user.vscode("merge-conflict.next")
+
 # Folding
 fold recursive:             user.vscode("editor.foldRecursively")
 unfold recursive:           user.vscode("editor.unfoldRecursively")
