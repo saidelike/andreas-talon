@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "user.git" and Talon-defined "terminal" tags are enabled
 tag: user.git
 and tag: terminal
 -

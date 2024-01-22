@@ -3,6 +3,8 @@ from talon import Context, Module, actions
 
 mod = Module()
 
+# this context is only active when the "vscode" app is enabled and we are not in the terminal
+# i.e. we are in the vscode editor
 ctx = Context()
 ctx.matches = r"""
 app: vscode

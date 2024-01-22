@@ -1,3 +1,5 @@
+# this file is only active when the "user"-defined "user.git" is enabled
+# i.e. in vscode or the terminal
 tag: user.git
 -
 

@@ -3,6 +3,7 @@ from talon import Module, Context, actions
 
 mod = Module()
 ctx = Context()
+# Declare a new global "user.git" tag
 mod.tag("git")
 
 mod.list("git_branch", "List of common git branches")
@@ -14,6 +15,9 @@ ctx.lists["user.git_branch"] = {
 }
 
 
+# we define new actions that are "git" related
+# i.e. in vscode or the terminal
+# with a default behavior and that we can override later
 @mod.action_class
 class Action:
     def git_clone():

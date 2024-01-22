@@ -41,8 +41,8 @@ class EditActions:
 # these are "user" actions
 @ctx.action_class("user")
 class UserActions:
-    # inherited when the "user.tabs" tag is enabled
     # ----- Tabs -----
+    # inherited when the "user.tabs" tag is enabled
     def tab_duplicate():
         actions.user.file_manager_focus_address()
         address = actions.edit.selected_text()

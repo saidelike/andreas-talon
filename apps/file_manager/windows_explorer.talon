@@ -1,6 +1,8 @@
+# this file is only active when the "user"-defined "windows_explorer" or "windows_file_browser" app is enabled
 app: windows_explorer
 app: windows_file_browser
 -
+# we want to be able to navigate folders, create files/folders, browse tabs
 tag(): user.file_manager
 tag(): user.tabs
 
