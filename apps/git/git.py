@@ -124,7 +124,7 @@ class Action:
 
     def git_numstat(since: Optional[str] = None):
         """Show git statistics"""
-        args = "--author='Andreas Arvidsson'"
+        args = "--author='Cedric Halbronn'"
         if since:
             args = f"{args} --since '{since}'"
         awk = "awk 'NF==3 {plus+=$1; minus+=$2} END {printf(\"+%d, -%d\\n\", plus, minus)}'"
