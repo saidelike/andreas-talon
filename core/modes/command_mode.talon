@@ -1,5 +1,6 @@
 # Switch to dictation mode and insert a phrase
-dictate [<phrase>]$:        user.dictation_mode(phrase or "")
+#dictate [<phrase>]$:        user.dictation_mode(phrase or "")
+dictation mode$:            user.dictation_mode("")
 
 # Switch to swedish dictation
 #swedish [<phrase>]$:        user.swedish_dictation_mode(phrase or "")
