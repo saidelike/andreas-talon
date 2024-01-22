@@ -4,7 +4,7 @@ from os import path, environ
 mod = Module()
 mod.tag("file_manager", "Tag for enabling generic file management commands")
 mod.list("path", "List of the users favorite paths")
-mod.list("custom_path", "List of custom paths")
+mod.list("custom_path", "List of custom paths")  # private
 
 ctx = Context()
 
