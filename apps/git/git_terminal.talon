@@ -4,7 +4,7 @@ and tag: terminal
 -
 
 git:                        "git "
-git verison:                "git --version\n"
+git version:                "git --version\n"
 git init:                   "git init\n"
 git log original:           "git log\n"
 git reflog:                 "git reflog\n"
