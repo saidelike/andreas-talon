@@ -95,7 +95,10 @@ class UserActions:
             actions.insert(name)
 
     def file_manager_new_file(name: str = None):
-        actions.key("alt-f w t")
+        # TODO: this is not working on Windows 10, is it Windows 11 only?
+        # actions.key("alt-f w t")
+        # https://superuser.com/questions/133175/is-there-a-shortcut-for-creating-a-new-file
+        actions.key("alt-h w up up up enter")
         if name:
             actions.insert(name)
 
