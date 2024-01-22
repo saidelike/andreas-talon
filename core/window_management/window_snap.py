@@ -79,7 +79,8 @@ def prev_next(m) -> str:
 
 
 @mod.capture(
-    rule="<user.prev_next> screen | screen (<user.prev_next> | <number_small>)"
+    # rule="<user.prev_next> screen | screen (<user.prev_next> | <number_small>)"
+    rule="<user.prev_next> | screen <number_small>"
 )
 def snap_screen(m) -> Union[int, str]:
     "A single screen position."
