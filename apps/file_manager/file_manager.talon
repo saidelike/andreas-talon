@@ -1,5 +1,7 @@
+# this file is only active when the user-defined "user.file_manager" tag is enabled
 tag: user.file_manager
 -
+# we want to be able to navigate forward/backward
 tag(): user.navigation
 
 # ----- Navigation -----

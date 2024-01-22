@@ -1,4 +1,5 @@
 # Source https://github.com/phillco/talon-videoconferencing/tree/work
+# TODO: this is useful for gaming atm only
 
 import json
 import os

@@ -31,6 +31,9 @@ class LinuxUserActions:
         actions.user.exec(f"nautilus {path}")
 
 
+# we define new actions that are "file manager" related
+# i.e. in a file explorer (Windows Explorer, Nautilus) or the terminal
+# with a default behavior and that we can override later
 @mod.action_class
 class Actions:
     # ----- Path -----

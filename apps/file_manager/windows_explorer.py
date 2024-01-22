@@ -3,6 +3,7 @@ from talon import Context, Module, actions
 
 mod = Module()
 
+# we define what it is to be a "windows_explorer" app
 mod.apps.windows_explorer = """
 os: windows
 and app.name: Windows Explorer
@@ -10,6 +11,7 @@ os: windows
 and app.exe: explorer.exe
 """
 
+# we define what it is to be a "windows_file_browser" app, which could be used in any application potentially
 # many commands should work in most save/open dialog.
 # note the "show options" stuff won"t work unless work
 # unless the path is displayed in the title, which is rare for those
@@ -18,6 +20,7 @@ os: windows
 title: /(Save|Open|Browse|Select|Install from|File Upload)/
 """
 
+# this context is only active when one of the above apps is enabled
 ctx = Context()
 ctx.matches = """
 app: windows_explorer
@@ -25,6 +28,7 @@ app: windows_file_browser
 """
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
     def file_start():
@@ -34,8 +38,10 @@ class EditActions:
         actions.key("end")
 
 
+# these are "user" actions
 @ctx.action_class("user")
 class UserActions:
+    # inherited when the "user.tabs" tag is enabled
     # ----- Tabs -----
     def tab_duplicate():
         actions.user.file_manager_focus_address()
@@ -47,12 +53,14 @@ class UserActions:
 
     # ----- Navigation -----
 
+    # inherited when the "user.navigation" tag is enabled
     def go_back():
         actions.key("alt-left")
 
     def go_forward():
         actions.key("alt-right")
 
+    # inherited from "file_explorer.py"
     def file_manager_go_parent():
         actions.key("alt-up")
 
@@ -79,6 +87,7 @@ class UserActions:
 
     # ----- Create folders / files -----
 
+    # inherited from "file_explorer.py"
     def file_manager_new_folder(name: str = None):
         actions.key("home")
         actions.key("ctrl-shift-n")
@@ -92,12 +101,14 @@ class UserActions:
 
     # ----- Miscellaneous -----
 
+    # inherited from "file_explorer.py"
     def file_manager_show_properties():
         actions.key("alt-enter")
 
     def file_manager_terminal_here():
         actions.user.file_manager_go("cmd.exe")
 
+    # inherited from "app.py"
     def pick_item(number: int):
         if number == 1:
             actions.key("space enter")
@@ -105,6 +116,7 @@ class UserActions:
             actions.next(number)
 
 
+# we define new actions that are "Windows Explorer" related
 @mod.action_class
 class Actions:
     def select_up():
