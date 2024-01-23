@@ -60,10 +60,15 @@ def show_subtitle(text: str):
 
 @mod.action_class
 class Actions:
-    def toggle_subtitles():
+    def toggle_subtitles(override: bool = None):
         """Toggle subtitles"""
         global show_override
-        show_override = not show_override
+        if override is not None:
+            show_override = override
+        elif show_override is None:
+            show_override = not setting_show(is_subtitle=True)
+        else:
+            show_override = not show_override
 
     def notify(text: str):
         """Show notification"""
