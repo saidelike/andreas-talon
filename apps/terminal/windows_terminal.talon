@@ -4,7 +4,6 @@ app: windows_terminal
 # we want to be able to browse tabs, find text
 tag(): user.tabs
 tag(): user.find
-tag(): user.bash
 
 split cross:                key(alt-shift-d)
 split right:                key(alt-shift-+)
