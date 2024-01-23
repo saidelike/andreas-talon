@@ -16,6 +16,8 @@ not tag: user.insert_paste_disabled
 PASTE_RE = re.compile(r"\s|[ /-]")
 
 
+# by default we insert text by pasting it.
+# but we allow disabling it by setting the "insert_paste_disabled" tag above
 @ctx_insert_paste.action_class("main")
 class MainActions:
     def insert(text: str):

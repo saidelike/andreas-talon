@@ -2,10 +2,13 @@ from talon import Module, Context, actions
 
 mod = Module()
 
+# we define what it is to be a "wsl" app
+# This requires starting wsl.exe into Windows Terminal
 mod.apps.wsl = r"""
 app: windows_terminal
 and win.title: /\w+@\w+: /i
 """
+# This is when opening "wsl" standalone
 mod.apps.wsl = """
 os: windows
 and app.name: Microsoft Windows Subsystem for Linux Launcher
@@ -14,6 +17,7 @@ and app.exe: wsl.exe
 """
 
 ctx = Context()
+# this context is only active when the above "wsl" app is enabled
 ctx.matches = """
 app: wsl
 """

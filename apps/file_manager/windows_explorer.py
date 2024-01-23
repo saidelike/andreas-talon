@@ -60,7 +60,7 @@ class UserActions:
     def go_forward():
         actions.key("alt-right")
 
-    # inherited from "file_explorer.py"
+    # inherited from "file_manager.py"
     def file_manager_go_parent():
         actions.key("alt-up")
 
@@ -87,7 +87,7 @@ class UserActions:
 
     # ----- Create folders / files -----
 
-    # inherited from "file_explorer.py"
+    # inherited from "file_manager.py"
     def file_manager_new_folder(name: str = None):
         actions.key("home")
         actions.key("ctrl-shift-n")
@@ -104,7 +104,7 @@ class UserActions:
 
     # ----- Miscellaneous -----
 
-    # inherited from "file_explorer.py"
+    # inherited from "file_manager.py"
     def file_manager_show_properties():
         actions.key("alt-enter")
 

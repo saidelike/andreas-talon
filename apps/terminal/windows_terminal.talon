@@ -1,5 +1,7 @@
+# this file is only active when the Talon-defined "windows_terminal" tag is enabled
 app: windows_terminal
 -
+# we want to be able to browse tabs, find text
 tag(): user.tabs
 tag(): user.find
 tag(): user.bash

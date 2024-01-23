@@ -1,5 +1,7 @@
+# this file is only active when the "user"-defined "user.bash" tag is enabled
 tag: user.bash
 -
+# when the "user.bash" tag is enabled, we want to be able to use terminal features
 tag(): terminal
 
 flag:                       " -"

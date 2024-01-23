@@ -2,6 +2,7 @@ from talon import app, Module, Context, actions
 from os import path, environ
 
 mod = Module()
+# Declare a new global "user.file_manager" tag
 mod.tag("file_manager", "Tag for enabling generic file management commands")
 mod.list("path", "List of the users favorite paths")
 mod.list("custom_path", "List of custom paths")  # private
