@@ -76,10 +76,10 @@ def update():
 
 
 # this places it in the middle top of my right screen
-# as 0.35 is 35% of the screen width
+# as 0.50 is 50% of the screen width
 @imgui.open(
     screen=ui.screen.screens()[2],
-    x=0.35,
+    x=0.50,
     y=0.00,
     numbered=True,
 )
