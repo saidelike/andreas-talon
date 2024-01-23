@@ -6,7 +6,7 @@ mod = Module()
 # This requires starting wsl.exe into Windows Terminal
 mod.apps.wsl = r"""
 app: windows_terminal
-and win.title: /\w+@\w+: /i
+and win.title: /\w+@[\w-]+: /i
 """
 # This is when opening "wsl" standalone
 mod.apps.wsl = """
