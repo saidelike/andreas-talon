@@ -3,29 +3,17 @@ Application name, Spoken form
 
 # Add spoken forms to these applications
 
-"Robo 3T, MongoDB management tool", Robomongo
-Codium, Code
-Diablo III Retail, Diablo
-Diablo IV Retail, Diablo
-foobar2000, foobar
-Gnome-control-center, Settings
-Gnome-terminal, Terminal
 Google Chrome, Chrome
 Google-chrome, Chrome
-Kodi, Codi
 Microsoft Edge, Edge
 Microsoft Visual Studio 2019, Visual Studio
-MongoDB Database Server, Mongo
-netbeans64.exe, Netbeans
 obs studio, OBS
-Org.gnome.Nautilus, Nautilus
-qbittorrent.exe, Bit Torrent
-robo3t, Robomongo
 Visual Studio Code, Code
-vscodium, Code
 Windows Command Processor, Command
 Windows Explorer, Explorer
 WindowsTerminal.exe, Terminal
+Microsoft Teams (work or school), Teams
+MSYS2 terminal, git bash
 
 # Exclude these applications
 
