@@ -22,7 +22,8 @@ ctx.matches = """
 app: wsl
 """
 
-ctx.tags = ["terminal", "user.bash"]
+# we want to be able to use bash commands, hence terminal commands
+ctx.tags = ["user.bash"]
 
 
 @ctx.action_class("user")
