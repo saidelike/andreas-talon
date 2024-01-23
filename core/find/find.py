@@ -50,15 +50,3 @@ class Actions:
 
     def find_replace_toggle_preserve_case():
         """Toggles replace preserve case"""
-
-    def find_reference_previous():
-        """Find previous result in referenced symbol"""
-
-    def find_reference_next():
-        """Find next result in referenced symbol"""
-
-    def find_definition_previous():
-        """Find previous result in followed/definition symbol"""
-
-    def find_definition_next():
-        """Find next result in followed/definition symbol"""

@@ -67,8 +67,12 @@ bar source:                 user.vscode("workbench.view.scm")
 bar scopes:                 user.vscode("cursorless.scopes.focus")
 bar file:                   user.vscode("workbench.files.action.showActiveFileInExplorer")
 bar collapse:               user.vscode("workbench.files.action.collapseExplorerFolders")
-ref last:                   user.vscode("references-view.prev")
-ref next:                   user.vscode("references-view.next")
+
+# references and definitions
+(reference|ref) last:       user.vscode("references-view.prev")
+(reference|ref) next:       user.vscode("references-view.next")
+(define|follow) last:       user.vscode("goToPreviousReference")
+(define|follow) next:       user.vscode("goToNextReference")
 
 # Panel
 panel (show | hide):        user.vscode("workbench.action.togglePanel")

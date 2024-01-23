@@ -154,18 +154,6 @@ class UserActions:
     def find_replace_confirm_all():
         actions.key("ctrl-alt-enter")
 
-    def find_reference_previous():
-        actions.user.vscode("references-view.prev")
-
-    def find_reference_next():
-        actions.user.vscode("references-view.next")
-
-    def find_definition_previous():
-        actions.user.vscode("goToPreviousReference")
-
-    def find_definition_next():
-        actions.user.vscode("goToNextReference")
-
     # ----- Tabs -----
     def tab_back():
         actions.user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
