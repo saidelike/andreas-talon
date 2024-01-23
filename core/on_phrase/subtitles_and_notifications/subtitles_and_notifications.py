@@ -14,17 +14,15 @@ show_override = None
 def setting(
     name: str, type: Type, desc: str, default: Optional[Any] = None
 ) -> Callable[[bool], Type]:
-    setting_subtitle = mod.setting(
-        f"subtitles_{name}", type, default=default, desc=f"Subtitles: {desc}"
-    )
-    setting_notify = mod.setting(
+    mod.setting(f"subtitles_{name}", type, default=default, desc=f"Subtitles: {desc}")
+    mod.setting(
         f"notifications_{name}", type, default=default, desc=f"Notifications: {desc}"
     )
 
     def callback(is_subtitle: bool):
         if is_subtitle:
-            return settings.get(f"subtitles_{name}")
-        return settings.get(f"notifications_{name}")
+            return settings.get(f"user.subtitles_{name}")
+        return settings.get(f"user.notifications_{name}")
 
     return callback
 
