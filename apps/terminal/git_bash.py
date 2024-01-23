@@ -25,7 +25,7 @@ win.file_ext: .bashbook
 # this context is only active when the above "git_bash" app is enabled
 # or when we are in the vscode terminal
 ctx = Context()
-ctx.matches = """
+ctx.matches = r"""
 app: git_bash
 
 app: vscode
