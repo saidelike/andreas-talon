@@ -55,7 +55,8 @@ expand height:              user.vscode("workbench.action.increaseViewHeight")
 split flip:                 user.vscode("workbench.action.toggleEditorGroupLayout")
 split clear:                user.vscode("workbench.action.joinTwoGroups")
 split solo:                 user.vscode("workbench.action.editorLayoutSingle")
-maximize:                   user.vscode("workbench.action.toggleEditorWidths")
+split max:                  user.vscode("workbench.action.toggleMaximizeEditorGroup")
+#maximize:                   user.vscode("workbench.action.toggleEditorWidths")
 cross:                      user.vscode("workbench.action.focusNextGroup")
 open (cross | split):       key(alt-enter)
 
@@ -78,7 +79,7 @@ bar collapse:               user.vscode("workbench.files.action.collapseExplorer
 (define|follow) next:       user.vscode("goToNextReference")
 
 # Panel
-panel (show | hide):        user.vscode("workbench.action.togglePanel")
+panel (toggle | switch | show | hide): user.vscode("workbench.action.togglePanel")
 panel (large | small):      user.vscode("workbench.action.toggleMaximizedPanel")
 panel control:              user.vscode("workbench.panel.repl.view.focus")
 panel output:               user.vscode("workbench.panel.output.focus")
@@ -162,6 +163,7 @@ go line <number>:           edit.jump_line(number - 1)
 pop back:                   user.vscode("workbench.action.openPreviousRecentlyUsedEditor")
 pop forward:                user.vscode("workbench.action.openNextRecentlyUsedEditor")
 focus editor:               user.vscode("workbench.action.focusActiveEditorGroup")
+focus panel:                user.vscode("workbench.action.focusPanel")
 
 # Tabs
 tab {user.letter} [{user.letter}]:
