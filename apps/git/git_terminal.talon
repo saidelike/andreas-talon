@@ -19,7 +19,6 @@ git reset soft:             "git reset --soft "
 git reset hard:             "git reset --hard "
 
 git fetch:                  "git fetch "
-git fetch all:              "git fetch -a\n"
 git fetch upstream:         "git fetch upstream\n"
 git fetch prune:            "git fetch --prune origin\n"
 

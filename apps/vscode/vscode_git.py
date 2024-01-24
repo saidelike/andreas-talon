@@ -47,6 +47,9 @@ class Actions:
     def git_stash_pop():
         actions.user.vscode("git.stashPop")
 
+    def git_fetch_all():
+        actions.user.vscode("git.fetchAll")
+
     def git_merge(branch: Optional[str] = None):
         command_with_text("git.merge", branch)
 

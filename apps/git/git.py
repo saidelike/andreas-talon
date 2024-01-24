@@ -64,6 +64,10 @@ class Action:
         """Pop stash"""
         actions.insert("git stash pop")
 
+    def git_fetch_all():
+        """Fetch all repositories"""
+        actions.insert("git fetch --all\n")
+
     def git_merge(branch: Optional[str] = None):
         """Merge branch <branch>"""
         actions.insert(f"git merge {branch or ''}")

@@ -20,6 +20,8 @@ git tag list:               user.git_show_tags()
 git stash:                  user.git_stash()
 git stash pop:              user.git_stash_pop()
 
+git fetch all:              user.git_fetch_all()
+
 git merge [<user.text>]:    user.git_merge(text or "")
 git merge {user.git_branch}:
     user.git_merge(git_branch)
