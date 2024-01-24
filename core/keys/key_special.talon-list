@@ -11,7 +11,8 @@ insert
 escape
 menu
 
-deli:                       delete
+# deli:                       delete
+scratch:                       delete
 page up:                    pageup
 page down:                  pagedown
 print screen:               printscr

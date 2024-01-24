@@ -44,7 +44,8 @@ extend after:               edit.extend_word_right()
 undo:                       edit.undo()
 redo:                       edit.redo()
 
-deli:                       edit.delete()
+# deli:                       edit.delete()
+scratch:                    edit.delete()
 drill:                      user.delete_right()
 
 # ----- Cut, copy, paste -----
