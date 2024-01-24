@@ -304,8 +304,12 @@ class Actions:
     # https://www.youtube.com/watch?v=oWUJyDgz63k
     def copy_command_id():
         """Copy the command id of the focused menu item"""
-        actions.key("tab:2 enter")
-        actions.sleep("500ms")
+        title = actions.win.title()
+        if not title.startswith("Keyboard Shortcuts"):
+            # it's expected to be run with the command palette open at least
+            actions.key("tab:2 enter")
+            actions.sleep("500ms")
+        # now we should be in the Keyboard Shortcuts window
         json_text = actions.edit.selected_text()
         command_id = json.loads(json_text)["command"]
         actions.app.tab_close()
