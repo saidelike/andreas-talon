@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "user.code_comments" tag is enabled
 tag: user.code_comments
 -
 

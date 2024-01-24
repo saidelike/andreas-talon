@@ -6,6 +6,7 @@ import re
 mod = Module()
 mod.list("vscode_sessions", "Known vscode sessions/workspaces")
 
+# we define what it is to be a "vscode" app
 mod.apps.vscode = r"""
 os: windows
 and app.exe: Code.exe
@@ -14,69 +15,88 @@ and app.name: Code
 """
 
 
+# this context is only active when the above "vscode" app is enabled
 ctx = Context()
 ctx.matches = r"""
 app: vscode
 """
 
 
+# these are Talon-defined "app" actions (only grouped for clarity) that we override
 @ctx.action_class("app")
 class AppActions:
+    # Open a new window
     def window_open():
         actions.user.vscode("workbench.action.newWindow")
 
+    # Open a new tab
     def tab_open():
         actions.user.vscode("workbench.action.files.newUntitledFile")
 
+    # Switch to previous tab for this window
     def tab_previous():
         actions.user.vscode("workbench.action.previousEditorInGroup")
 
+    # Switch to next tab for this window
     def tab_next():
         actions.user.vscode("workbench.action.nextEditorInGroup")
 
+    # Open app preferences
     def preferences():
         actions.user.vscode("workbench.action.openGlobalSettings")
 
 
+# these are Talon-defined "code" actions (only grouped for clarity) that we override
 @ctx.action_class("code")
 class CodeActions:
+    # Toggle comments on the current line(s)
     def toggle_comment():
         actions.user.vscode("editor.action.commentLine")
 
+    # Trigger code autocomplete
     def complete():
         actions.user.vscode("editor.action.triggerSuggest")
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
+    # Save current document
     def save():
         actions.user.vscode("hideSuggestWidget")
         actions.next()
 
+    # Get currently selected text
     def selected_text() -> str:
         selectedTexts = actions.user.vscode_get("andreas.getSelectedText")
         if selectedTexts is not None:
             return "\n".join(selectedTexts)
         return actions.next()
 
+    # Clear current selection
     def select_none():
         actions.key("escape")
 
     # ----- Word -----
+    # Delete word under cursor
     def delete_word():
         empty_selection()
         actions.next()
 
     # ----- Line commands -----
+    # Swap the current line with the line above
     def line_swap_up():
         actions.user.vscode("editor.action.moveLinesUpAction")
 
+    # Swap the current line with the line below
     def line_swap_down():
         actions.user.vscode("editor.action.moveLinesDownAction")
 
+    # Clones specified line at current position
     def line_clone():
         actions.user.vscode("editor.action.copyLinesDownAction")
 
+    # Insert line above cursor
     def line_insert_up():
         actions.user.vscode("editor.action.insertLineBefore")
 
@@ -84,23 +104,29 @@ class EditActions:
     # def line_insert_down():
     # actions.user.vscode("editor.action.insertLineAfter")
 
+    # Delete line under cursor
     def delete_line():
         actions.user.vscode("editor.action.deleteLines")
 
+    # Extend selection to include line <n>
     def extend_line(n: int):
         actions.user.vscode("andreas.selectTo", n)
 
+    # Move cursor to line <n>
     def jump_line(n: int):
         actions.user.vscode("andreas.goToLine", n)
 
     # ----- Indent -----
+    # Add a tab stop of indentation
     def indent_more():
         actions.user.vscode("editor.action.indentLines")
 
+    # Remove a tab stop of indentation
     def indent_less():
         actions.user.vscode("editor.action.outdentLines")
 
     # ----- Zoom -----
+    # Zoom to original size
     def zoom_reset():
         actions.user.vscode("workbench.action.zoomReset")
 
@@ -108,16 +134,19 @@ class EditActions:
 @ctx.action_class("user")
 class UserActions:
     # ----- Navigation -----
+    # inherited when "user.navigation" tag is enabled
     def go_back():
         actions.user.vscode("workbench.action.navigateBack")
 
     def go_forward():
         actions.user.vscode("workbench.action.navigateForward")
 
+    # inherited from "edit_line.py"
     def line_middle():
         actions.user.vscode("andreas.lineMiddle")
 
     # ----- Find / Replace -----
+    # inherited when "user.find" tag is enabled
     def find_everywhere(text: str = None):
         actions.user.vscode("workbench.action.findInFiles")
         if text:
@@ -155,6 +184,7 @@ class UserActions:
         actions.key("ctrl-alt-enter")
 
     # ----- Tabs -----
+    # inherited when "user.tabs" tag is enabled
     def tab_back():
         actions.user.vscode("workbench.action.openPreviousRecentlyUsedEditorInGroup")
 
@@ -168,6 +198,7 @@ class UserActions:
         actions.user.vscode("andreas.openEditorAtIndex", -number)
 
     # ----- Scroll -----
+    # inherited when "user.scroll" tag is enabled
     def scroll_up():
         actions.key("ctrl-up")
 
@@ -187,6 +218,7 @@ class UserActions:
         actions.user.vscode("editorScroll", {"to": "down", "by": "halfPage"})
 
     # ----- Word -----
+    # inherited from "edit_word.py"
     def cut_word():
         empty_selection()
         actions.next()
@@ -200,6 +232,7 @@ class UserActions:
         actions.next()
 
     # ----- Dictation -----
+    # inherited from "text_and_dictation.py"
     def dictation_get_context() -> tuple[Optional[str], Optional[str]]:
         try:
             context = actions.user.vscode_get("andreas.getDictationContext")
@@ -211,11 +244,13 @@ class UserActions:
         return (None, None)
 
     # ----- Snippets -----
+    # inherited from "snippets_insert.py"
     def insert_snippet(body: str):
         # actions.user.cursorless_insert_snippet(body)
         actions.user.vscode("editor.action.insertSnippet", {"snippet": body})
 
     # ----- Text getters -----
+    # inherited from "code_generic_language.py"
     def code_get_class_name() -> Optional[str]:
         return actions.user.vscode_get("andreas.getClassName")
 
@@ -223,6 +258,7 @@ class UserActions:
         return actions.user.vscode_get("andreas.getOpenTagName")
 
 
+# we define new actions that are "vscode" related
 @mod.action_class
 class Actions:
     def save_without_formatting():
@@ -265,6 +301,7 @@ class Actions:
         if language:
             actions.insert(language)
 
+    # https://www.youtube.com/watch?v=oWUJyDgz63k
     def copy_command_id():
         """Copy the command id of the focused menu item"""
         actions.key("tab:2 enter")

@@ -10,6 +10,7 @@ righty:                     user.mouse_click("right")
 stash:                      user.mouse_click("control")
 
 # Scroll
+# TODO: should the scrolling commands be moved to scroll.talon?
 climb:                      user.mouse_scrolling("up")
 drop:                       user.mouse_scrolling("down")
 climb <number_small>:       user.mouse_scroll("up", number_small)

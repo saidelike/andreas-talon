@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "user.find" tag is enabled
 tag: user.find
 -
 

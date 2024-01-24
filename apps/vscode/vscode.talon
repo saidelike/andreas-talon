@@ -1,5 +1,8 @@
+# this file is only active when the "user"-defined "vscode" app is enabled
 app: vscode
 -
+# we want to be able to scroll, navigate forward/backward, zoom, browse tabs, find text
+# we also want to add comments, and use git
 tag(): user.scroll
 tag(): user.navigation
 tag(): user.zoom

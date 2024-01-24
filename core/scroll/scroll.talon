@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "user.scroll" tag is enabled
 tag: user.scroll
 -
 
