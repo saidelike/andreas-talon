@@ -4,7 +4,8 @@ tag: user.find
 
 # search in current file
 scout paste:                edit.find(clip.text())
-scout text [<user.text>] [then]: edit.find(text or "")
+# scout text [<user.text>] [then]: edit.find(text or "")
+scout text [<user.text>]$:  edit.find(text or "")
 # scout$:                     edit.find("")
 
 scout last:                 edit.find_previous()
@@ -12,7 +13,8 @@ scout next:                 edit.find_next()
 
 # search everywhere
 scout (eve|if) paste:       user.find_everywhere(clip.text())
-scout (eve|if) text [<user.text>] [then]: user.find_everywhere(text or "")
+# scout (eve|if) text [<user.text>] [then]: user.find_everywhere(text or "")
+scout (eve|if) text [<user.text>]$: user.find_everywhere(text or "")
 # scout (eve|if)$:            user.find_everywhere("")
 
 scout (eve|if) last:        user.find_everywhere_previous()
