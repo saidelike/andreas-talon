@@ -80,7 +80,7 @@ class Action:
 
     def git_show_branches():
         """Show branches"""
-        actions.insert("git branch\n")
+        actions.insert("git branch --all\n")
 
     def git_create_branch(branch: Optional[str] = None):
         """Create branch <branch>"""
