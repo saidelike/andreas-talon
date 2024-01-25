@@ -96,6 +96,7 @@ class Actions:
         actions.user.vscode("git.cherryPick")
 
 
+# we define new actions that are "vscode git" related
 @mod.action_class
 class Actions:
     def git_open_remote_file_url(use_selection: bool, use_branch: bool):

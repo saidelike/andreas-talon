@@ -59,6 +59,8 @@ class EditActions:
 # that we override to call our Windows Terminal implementation
 @ctx.action_class("user")
 class UserActions:
+    # ----- Tabs -----
+    # inherited when "user.tabs" tag is enabled
     def tab_jump(number: int):
         if number < 9:
             actions.key(f"ctrl-alt-{number}")
@@ -68,3 +70,6 @@ class UserActions:
 
     def tab_duplicate():
         actions.key("ctrl-shift-d")
+
+    # ----- Path -----
+    # inherited from "file_manager.py"

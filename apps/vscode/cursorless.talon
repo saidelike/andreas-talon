@@ -56,15 +56,20 @@ change <user.cursorless_target> <user.repeater_phrase_all>:
     edit.delete()
 
 # Text insertion
+# eg "place stack to end of next line" will append a ":" to the end of the following line
 place ({user.symbol} | <user.text>) <user.cursorless_destination>:
     user.cursorless_insert(cursorless_destination, symbol or text)
 
+# TODO: how does this work?
 snip {user.snippet} <user.cursorless_destination>:
     user.c_insert_snippet(cursorless_destination, snippet)
 
+# eg "dash wrap this" wraps the target with "-"
 {user.symbol} wrap <user.cursorless_target>:
     user.c_wrap_with_symbol(cursorless_target, symbol)
 
+# eg "if wrap this" in .py file
+# see core\snippets\snippets\ifStatement.snippet
 {user.snippet_wrapper} wrap <user.cursorless_target>:
     user.c_wrap_with_snippet(cursorless_target, snippet_wrapper)
 

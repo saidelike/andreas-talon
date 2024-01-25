@@ -74,8 +74,17 @@ period:                     ". "
 dasher:                     " - "
 arrow:                      user.insert_arrow()
 
+# eg "snip if" in a .py file
+# see core\snippets\snippets\ifStatement.snippet
 snip {user.snippet}:
     user.insert_snippet_by_name(snippet)
 
+# eg "snip comment hello" in a Talon file gives:
+# "# Hello"
+# see core\snippets\snippets\commentLine.snippet
+#
+# eg "snip command hello" in a Talon file gives (with "blah" in the clipboard):
+# hello: user.vscode("blah")
+# see core\snippets\snippets\talon.snippet
 snip {user.snippet_with_phrase} <user.text>:
     user.insert_snippet_by_name_with_phrase(snippet_with_phrase, text)
