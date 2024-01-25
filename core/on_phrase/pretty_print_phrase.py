@@ -3,7 +3,7 @@ from .analyze_phrase.types import AnalyzedPhrase
 
 mod = Module()
 
-settings_pretty = mod.setting(
+mod.setting(
     "pretty_print_phrase",
     type=bool,
     default=False,

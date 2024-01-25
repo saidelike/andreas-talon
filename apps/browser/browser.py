@@ -10,6 +10,8 @@ tag: browser
 
 browser_name = "Firefox" if app.platform == "windows" else "firefox"
 
+mod.list("domain", "List of top level domains")
+
 
 # "browser" has built-in actions that we override here
 @ctx.action_class("browser")

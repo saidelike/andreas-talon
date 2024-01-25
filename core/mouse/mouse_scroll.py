@@ -3,7 +3,7 @@ import time
 
 mod = Module()
 
-setting_scroll_speed = mod.setting(
+mod.setting(
     "scroll_speed",
     type=float,
     default=1,

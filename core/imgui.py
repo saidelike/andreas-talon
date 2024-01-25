@@ -20,16 +20,8 @@ MAX_IMAGE_HEIGHT = 1 / 10
 
 mod = Module()
 
-setting_max_rows = mod.setting(
-    "gui_max_rows",
-    type=int,
-    default=5,
-)
-setting_max_col = mod.setting(
-    "gui_max_cols",
-    type=int,
-    default=50,
-)
+mod.setting("gui_max_rows", type=int, default=5)
+mod.setting("gui_max_cols", type=int, default=50)
 
 
 class State:

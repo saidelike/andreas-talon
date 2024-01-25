@@ -3,6 +3,7 @@ tag: user.file_manager
 -
 # we want to be able to navigate forward/backward
 tag(): user.navigation
+tag(): user.extensions
 
 # ----- Navigation -----
 go parent:                  user.file_manager_go_parent()

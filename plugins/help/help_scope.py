@@ -3,7 +3,7 @@ from ...core.imgui import imgui
 
 mod = Module()
 
-setting_max_length = mod.setting(
+mod.setting(
     "help_scope_max_length",
     type=int,
     default=50,
@@ -53,11 +53,10 @@ def print_value(gui: imgui.GUI, path: str, value, ignore: set[str] = {}):
 def format_value(value):
     if isinstance(value, list) or isinstance(value, set):
         value = ", ".join(sorted(value))
-    if (
-        isinstance(value, str)
-        and len(value) > settings.get("user.help_scope_max_length") + 4
-    ):
-        return f"{value[:settings.get('user.help_scope_max_length')]} ..."
+    if isinstance(value, str):
+        max_length = settings.get("user.help_scope_max_length")
+        if len(value) > max_length + 4:
+            return f"{value[:max_length]} ..."
     return value
 
 

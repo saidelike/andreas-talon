@@ -9,18 +9,27 @@ mod = Module()
 mod.list("help_contexts", "list of available contexts")
 mod.tag("help_commands", "Help commands gui is showing")
 
-setting_help_max_contexts_per_page = mod.setting(
+mod.setting(
     "help_max_contexts_per_page",
     type=int,
     default=20,
     desc="Max contexts to display per page in help",
 )
-setting_help_max_command_lines_per_page = mod.setting(
+mod.setting(
     "help_max_command_lines_per_page",
     type=int,
     default=50,
     desc="Max lines of command to display per page in help",
 )
+
+
+def setting_help_max_contexts_per_page() -> int:
+    return settings.get("user.help_max_contexts_per_page")
+
+
+def setting_help_max_command_lines_per_page() -> int:
+    return settings.get("user.help_max_command_lines_per_page")
+
 
 ctx = Context()
 # context name -> commands
@@ -89,22 +98,20 @@ def format_context_button(index: int, context_label: str, context_name: str) -> 
 
 # translates 1-based index -> actual index in sorted_context_map_keys
 def get_context_page(index: int) -> int:
-    return math.ceil(index / settings.get("user.help_max_contexts_per_page"))
+    return math.ceil(index / setting_help_max_contexts_per_page())
 
 
 def get_total_context_pages() -> int:
     return math.ceil(
-        len(sorted_context_map_keys) / settings.get("user.help_max_contexts_per_page")
+        len(sorted_context_map_keys) / setting_help_max_contexts_per_page()
     )
 
 
 def get_current_context_page_length() -> int:
-    start_index = (current_context_page - 1) * settings.get(
-        "user.help_max_contexts_per_page"
-    )
+    start_index = (current_context_page - 1) * setting_help_max_contexts_per_page()
     return len(
         sorted_context_map_keys[
-            start_index : start_index + settings.get("user.help_max_contexts_per_page")
+            start_index : start_index + setting_help_max_contexts_per_page()
         ]
     )
 
@@ -132,8 +139,9 @@ def get_pages(item_line_counts: list[int]) -> list[int]:
     current_page = 1
     pages = []
     for line_count in item_line_counts:
-        if line_count + current_page_line_count > settings.get(
-            "user.help_max_command_lines_per_page"
+        if (
+            line_count + current_page_line_count
+            > setting_help_max_command_lines_per_page()
         ):
             if current_page_line_count == 0:
                 # Special case, render a larger page.
@@ -502,9 +510,8 @@ class Actions:
         global sorted_context_map_keys, selected_context
         index = number - 1
         if gui_context_help.showing:
-            if index < settings.get("user.help_max_contexts_per_page") and (
-                (current_context_page - 1)
-                * settings.get("user.help_max_contexts_per_page")
+            if index < setting_help_max_contexts_per_page() and (
+                (current_context_page - 1) * setting_help_max_contexts_per_page()
                 + index
                 < len(sorted_context_map_keys)
             ):
@@ -512,7 +519,7 @@ class Actions:
                     selected_context = ctx.lists["user.help_contexts"][
                         sorted_context_map_keys[
                             (current_context_page - 1)
-                            * settings.get("user.help_max_contexts_per_page")
+                            * setting_help_max_contexts_per_page()
                             + index
                         ]
                     ]

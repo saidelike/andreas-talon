@@ -15,11 +15,15 @@ tag: user.clipboard_manager
 
 mod.tag("clipboard_manager", "Indicates that the clipboard manager is visible")
 
-setting_clipboard_manager_max_rows = mod.setting(
+mod.setting(
     "clipboard_manager_max_rows",
     type=int,
     default=20,
 )
+
+
+def setting_max_rows() -> int:
+    return settings.get("user.clipboard_manager_max_rows")
 
 
 @dataclass
@@ -85,7 +89,7 @@ def update():
 )
 def gui(gui: imgui.GUI):
     global clicked_num
-    max_rows = settings.get("user.clipboard_manager_max_rows")
+    max_rows = setting_max_rows()
     sticky_text = " - STICKY" if sticky else ""
     gui.header(f"Clipboard ({len(clip_history)} / {max_rows}){sticky_text}")
 
@@ -245,7 +249,7 @@ def validate_number(number: range):
 
 def shrink():
     global clip_history
-    max_rows = settings.get("user.clipboard_manager_max_rows")
+    max_rows = setting_max_rows()
     if len(clip_history) > max_rows:
         clip_history = clip_history[:max_rows]
 

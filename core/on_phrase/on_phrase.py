@@ -10,7 +10,7 @@ from .sleep_update_phrase import sleep_update_phrase
 
 mod = Module()
 
-settings_analyze_phrase = mod.setting(
+mod.setting(
     "analyze_phrase",
     type=bool,
     default=True,

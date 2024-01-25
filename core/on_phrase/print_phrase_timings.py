@@ -3,7 +3,7 @@ from talon.grammar import Phrase
 
 mod = Module()
 
-settings_log = mod.setting(
+mod.setting(
     "print_phrase_timings",
     type=bool,
     default=False,
