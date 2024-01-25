@@ -73,3 +73,6 @@ class UserActions:
 
     # ----- Path -----
     # inherited from "file_manager.py"
+    def file_manager_go(path: str):
+        actions.insert(f"cd {path}")
+        actions.key("enter")
