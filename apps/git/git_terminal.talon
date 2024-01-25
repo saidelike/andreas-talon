@@ -33,6 +33,8 @@ git pull upstream:          "git pull upstream\n"
 git pull upstream master:   "git pull upstream master\n"
 git pull upstream main:     "git pull upstream main\n"
 
+git merge no commit:        "git merge upstream/master --no-ff --no-commit"
+
 git push deli:              "git push origin -d "
 
 git numstat:                user.git_numstat("")
