@@ -1,13 +1,8 @@
-os: windows
-and app.exe: cmd.exe
-os: windows
-and app.exe: conhost.exe
-os: windows
-and app.exe: WindowsTerminal.exe
-title: Talon - REPL
+app: repl
 -
 
-events tail:                "events.tail('/^((?!win|browser).)*$/')\n"
+events tail win browser:    "events.tail('/^((?!win|browser).)*$/')\n"
+events tail:                "events.tail()\n"
 parrot events:              "events.tail('parrot predict')\n"
 
 actions list [<user.text>]:
