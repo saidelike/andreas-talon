@@ -12,6 +12,10 @@ mod.apps.teams = """
 os: windows
 and app.exe: Teams.exe
 """
+mod.apps.teams = """
+os: windows
+and app.exe: ms-teams.exe
+"""
 
 # this context is only active when the above "teams" app is enabled
 ctx.matches = """
