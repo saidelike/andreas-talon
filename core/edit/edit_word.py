@@ -80,3 +80,27 @@ class Actions:
             actions.edit.delete()
         else:
             actions.user.delete_word_right()
+
+    def copy_selection_or_word():
+        """Copy selection or word under cursor (simulates 'copy this')"""
+        text = actions.edit.selected_text()
+        if len(text) > 0:
+            actions.edit.copy()
+        else:
+            actions.user.copy_word()
+
+    def cut_selection_or_word():
+        """Cut selection or word under cursor (simulates 'cut this')"""
+        text = actions.edit.selected_text()
+        if len(text) > 0:
+            actions.edit.cut()
+        else:
+            actions.user.cut_word()
+
+    def paste_to_selection_or_word():
+        """Paste from clipboard to selection or word under cursor (simulates 'paste to this')"""
+        text = actions.edit.selected_text()
+        if len(text) > 0:
+            actions.edit.paste()
+        else:
+            actions.user.paste_word()

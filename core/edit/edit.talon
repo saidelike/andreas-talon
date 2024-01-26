@@ -49,12 +49,10 @@ scratch:                    edit.delete()
 drill:                      user.delete_right()
 
 # ----- Cut, copy, paste -----
-cut (this | dis):           user.edit_cut()
-copy (this | dis):          user.edit_copy()
-paste to (this | dis):      user.edit_paste(true)
-paste it:                   user.edit_paste(false)
-paste special:              edit.paste_match_style()
-paste insert:               user.insert_clipboard_with_keys()
+(pace | paste) it:          user.edit_paste(false)
+(pace | paste) special:     edit.paste_match_style()
+(pace | paste) all:         user.paste_all()
+(pace | paste) insert:      user.insert_clipboard_with_keys()
 
 remove:                     user.delete_word_left()
 wipe:                       user.delete_word_right()
