@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "repl" app is enabled
 app: repl
 -
 

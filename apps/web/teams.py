@@ -3,6 +3,7 @@ from talon import Context, Module, actions
 ctx = Context()
 mod = Module()
 
+# we define what it is to be a "teams" app
 mod.apps.teams = """
 tag: browser
 browser.host: teams.microsoft.com
@@ -12,6 +13,7 @@ os: windows
 and app.exe: Teams.exe
 """
 
+# this context is only active when the above "teams" app is enabled
 ctx.matches = """
 app: teams
 """

@@ -60,7 +60,8 @@ change <user.cursorless_target> <user.repeater_phrase_all>:
 place ({user.symbol} | <user.text>) <user.cursorless_destination>:
     user.cursorless_insert(cursorless_destination, symbol or text)
 
-# TODO: how does this work?
+# eg "snip if to row 10" will insert the if statement snippet at row 10
+# see core\snippets\snippets\ifStatement.snippet
 snip {user.snippet} <user.cursorless_destination>:
     user.c_insert_snippet(cursorless_destination, snippet)
 

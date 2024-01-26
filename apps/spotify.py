@@ -4,6 +4,7 @@ from talon import Module, Context, actions
 mod = Module()
 ctx = Context()
 
+# we define what it is to be a "spotify" app, but it's already the case by default
 mod.apps.spotify = """
 os: windows
 and app.name: Spotify.exe
@@ -11,6 +12,7 @@ os: windows
 and app.exe: Spotify.exe
 """
 
+# this context is only active when the above "spotify" app is enabled
 ctx.matches = r"""
 app: spotify
 """

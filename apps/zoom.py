@@ -3,6 +3,7 @@ from talon import Context, actions, Module
 ctx = Context()
 mod = Module()
 
+# we define what it is to be a "zoom" app, but it's already the case by default
 mod.apps.zoom = """
 os: windows
 and app.name: Zoom Meetings
@@ -10,6 +11,7 @@ os: windows
 and app.exe: Zoom.exe
 """
 
+# this context is only active when the above "zoom" app is enabled
 ctx.matches = r"""
 app: zoom
 """

@@ -1,3 +1,4 @@
+# this file is only active when the "user"-defined "youtube" app is enabled
 app: youtube
 -
 

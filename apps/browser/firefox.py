@@ -73,6 +73,8 @@ url_pattern = re.compile(r"https?://\S+")
 @ctx.action_class("browser")
 class BrowserActions:
     # Get page URL
+    # https://github.com/talonhub/community/blob/main/apps/README.md
+    # is the browser.host populated automatically by Talon based on the browser.address() action?
     def address() -> str:
         # requires Rango setting that adds address to window title:
         # Title decorators > Include URL in title
