@@ -4,16 +4,20 @@ ctx = Context()
 mod = Module()
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
+    # Move cursor to the start of the current paragraph
     def paragraph_start():
         if extend_paragraph_start():
             actions.edit.left()
 
+    # Move cursor to the end of the current paragraph
     def paragraph_end():
         if extend_paragraph_end():
             actions.edit.right()
 
+    # Select the entire nearest paragraph
     def select_paragraph():
         if is_line_empty():
             return
@@ -23,12 +27,15 @@ class EditActions:
         # Extend to end of paragraph
         actions.edit.extend_paragraph_end()
 
+    # Extend selection to the start of the current paragraph
     def extend_paragraph_start():
         extend_paragraph_start()
 
+    # Extend selection to the end of the current paragraph
     def extend_paragraph_end():
         extend_paragraph_end()
 
+    # Delete paragraph under cursor
     def delete_paragraph():
         actions.edit.select_paragraph()
         actions.edit.delete()
@@ -36,6 +43,7 @@ class EditActions:
         actions.edit.delete_line()
 
 
+# we define new actions that are "paragraph edition" related
 @mod.action_class
 class Actions:
     def cut_paragraph():

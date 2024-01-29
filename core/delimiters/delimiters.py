@@ -33,6 +33,7 @@ mod.list(
 ctx.lists["user.delimiter_pair_wrap"] = matching_pairs_all.keys()
 
 
+# we define new actions that are "delimiters" related
 @mod.action_class
 class Actions:
     def delimiters_pair_insert_by_name(pair_name: str):

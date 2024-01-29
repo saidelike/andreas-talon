@@ -4,14 +4,18 @@ mod = Module()
 ctx = Context()
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
+    # Move cursor left one word
     def word_left():
         actions.key("ctrl-left")
 
+    # Move cursor right one word
     def word_right():
         actions.key("ctrl-right")
 
+    # Select word under cursor
     def select_word():
         actions.edit.right()
         actions.edit.word_left()
@@ -21,17 +25,21 @@ class EditActions:
         for _ in range(len(text) - len(text_trim)):
             actions.edit.extend_left()
 
+    # Extend selection left one word
     def extend_word_left():
         actions.key("ctrl-shift-left")
 
+    # Extend selection right one word
     def extend_word_right():
         actions.key("ctrl-shift-right")
 
+    # Delete word under cursor
     def delete_word():
         actions.edit.select_word()
         actions.edit.delete()
 
 
+# we define new actions that are "word edition" related
 @mod.action_class
 class Actions:
     def select_word_left():

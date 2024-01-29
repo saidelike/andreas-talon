@@ -5,6 +5,8 @@ mod = Module()
 format = "%Y-%m-%d"
 
 
+# we define new actions that are "date" related
+# TODO: have a timestamp() that allows us to get the current time
 @mod.action_class
 class Actions:
     def date_today() -> str:

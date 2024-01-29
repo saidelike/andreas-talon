@@ -5,6 +5,7 @@ mod = Module()
 
 # ---------- Paste insert ------
 
+# Declare a new global "user.insert_paste_disabled" tag
 mod.tag("insert_paste_disabled", "Never use paste to insert text")
 
 ctx_insert_paste = Context()
@@ -33,108 +34,138 @@ class MainActions:
 ctx = Context()
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
     # ----- Navigation -----
+    # Move cursor up one row
     def up():
         actions.key("up")
 
+    # Move cursor down one row
     def down():
         actions.key("down")
 
+    # Move cursor left one column
     def left():
         actions.key("left")
 
+    # Move cursor right one column
     def right():
         actions.key("right")
 
+    # Move cursor up one page
     def page_up():
         actions.key("pageup")
 
+    # Move cursor down one page
     def page_down():
         actions.key("pagedown")
 
     # ----- Selection -----
+    # Clear current selection
     def select_none():
         actions.key("right")
 
+    # Extend selection up one row
     def extend_up():
         actions.key("shift-up")
 
+    # Extend selection down one row
     def extend_down():
         actions.key("shift-down")
 
+    # Extend selection left one column
     def extend_left():
         actions.key("shift-left")
 
+    # Extend selection right one column
     def extend_right():
         actions.key("shift-right")
 
+    # Insert a copy of the current selection
     def selection_clone():
         text = actions.edit.selected_text()
         actions.edit.select_none()
         actions.insert(text)
 
     # ----- Save -----
+    # Save all active modes
     def save():
         actions.key("ctrl-s")
 
     # ----- Delete, Undo, Redo -----
+    # Delete selection
     def delete():
         actions.key("backspace")
 
+    # Undo
     def undo():
         actions.key("ctrl-z")
 
+    # Redo
     def redo():
         actions.key("ctrl-y")
 
     # ----- Cut, Copy, Paste -----
+    # Cut selection to clipboard
     def cut():
         actions.key("ctrl-x")
 
+    # Copy selection to clipboard
     def copy():
         actions.key("ctrl-c")
 
+    # Paste clipboard at cursor_
     def paste():
         # Sleeps are necessary when chaining commands before and after sleep
         actions.sleep("25ms")
         actions.key("ctrl-v")
         actions.sleep("25ms")
 
+    # Paste clipboard without style information
     def paste_match_style():
         actions.key("ctrl-shift-v")
 
     # ----- Indent -----
+    # Remove a tab stop of indentation
     def indent_less():
         actions.key("home delete")
 
+    # Add a tab stop of indentation
     def indent_more():
         actions.key("home tab")
 
     # ----- Find -----
+    # Open Find dialog, optionally searching for text
     def find(text: str = None):
         actions.key("ctrl-f")
         if text:
             actions.insert(text)
 
+    # Select previous Find result
     def find_previous():
         actions.key("shift-f3")
 
+    # Select next Find result
     def find_next():
         actions.key("f3")
 
     # ----- Zoom -----
+    # Zoom in
     def zoom_in():
         actions.key("ctrl-+")
 
+    # Zoom out
     def zoom_out():
         actions.key("ctrl--")
 
+    # Zoom to original size
     def zoom_reset():
         actions.key("ctrl-0")
 
     # ----- Miscellaneous -----
+    # Get currently selected text
     def selected_text() -> str:
         with clip.capture(0.1) as c:
             actions.edit.copy()
@@ -144,6 +175,7 @@ class EditActions:
             return ""
 
 
+# we define new actions that are "edition" related
 @mod.action_class
 class Actions:
     def insert_with_padding(text: str):

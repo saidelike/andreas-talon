@@ -3,9 +3,12 @@ from pathlib import Path
 
 mod = Module()
 ctx = Context()
+# Declare a list "{user.abbreviation}"
 mod.list("abbreviation", "Common abbreviation")
 
 
+# Declare a capture "<user.abbreviation>" (due to "abbreviation" function definition below)
+# It is global like everything you define on the module
 @mod.capture(rule="brief {user.abbreviation}")
 def abbreviation(m) -> str:
     """Abbreviated words"""

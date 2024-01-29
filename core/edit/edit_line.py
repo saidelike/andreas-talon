@@ -4,19 +4,24 @@ ctx = Context()
 mod = Module()
 
 
+# these are Talon-defined "edit" actions (only grouped for clarity) that we override
 @ctx.action_class("edit")
 class EditActions:
+    # Move cursor to start of line
     def line_start():
         actions.key("home")
 
+    # Move cursor to end of line
     def line_end():
         actions.key("end")
 
+    # Select entire line <n>, or current line
     def select_line(n: int = None):
         if n:
             actions.edit.jump_line(n)
         actions.key("end shift-home")
 
+    # Select entire lines from <a> to <b>
     def select_lines(a: int, b: int):
         number_of_lines = abs(a - b)
         if number_of_lines < 1 or number_of_lines > 500:
@@ -32,45 +37,56 @@ class EditActions:
                 actions.edit.extend_line_up()
             actions.edit.extend_line_start()
 
+    # Extend selection up one full line
     def extend_line_up():
         actions.key("shift-up")
 
+    # Extend selection down one full line
     def extend_line_down():
         actions.key("shift-down")
 
+    # Extend selection to start of line
     def extend_line_start():
         actions.key("shift-home")
 
+    # Extend selection to end of line
     def extend_line_end():
         actions.key("shift-end")
 
+    # Insert line above cursor
     def line_insert_up():
         actions.key("home enter up")
 
+    # Insert line below cursor
     def line_insert_down():
         actions.key("end enter")
 
+    # Create a new line identical to the current line
     def line_clone():
         actions.user.copy_line()
         actions.edit.line_insert_down()
         actions.edit.paste()
 
+    # Swap the current line with the line above
     def line_swap_up():
         actions.user.cut_line()
         actions.edit.line_start()
         actions.edit.paste()
         actions.key("enter up")
 
+    # Swap the current line with the line below
     def line_swap_down():
         actions.user.cut_line()
         actions.key("down end enter")
         actions.edit.paste()
 
+    # Delete line under cursor
     def delete_line():
         actions.user.clear_line()
         actions.key("home delete")
 
 
+# we define new actions that are "line edition" related
 @mod.action_class
 class Actions:
     def line_middle():
