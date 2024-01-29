@@ -22,12 +22,14 @@ class DictateActionsEn:
 class Actions:
     def edit_words_to_replace():
         """Edit words to replace csv"""
-        file = Path(__file__).parent / "words_to_replace_en.csv"
+        andreas_settings = actions.user.andreas_settings()
+        file = Path(andreas_settings) / "words_to_replace_en.csv"
         actions.user.edit_text_file(file.absolute())
 
     def edit_vocabulary():
         """Edit vocabulary Talon list"""
-        file = Path(__file__).parent / "vocabulary_en.talon-list"
+        andreas_settings = actions.user.andreas_settings()
+        file = Path(andreas_settings) / "vocabulary_en.talon-list"
         actions.user.edit_text_file(file.absolute())
 
 
@@ -40,9 +42,9 @@ def words_to_replace_en_update(csv_dict: dict):
 
 
 def on_ready():
-    dir = Path(__file__).parent
+    andreas_settings = Path(actions.user.andreas_settings())
     actions.user.watch_csv_as_dict(
-        dir / "words_to_replace_en.csv",
+        andreas_settings / "words_to_replace_en.csv",
         words_to_replace_en_update,
     )
 
