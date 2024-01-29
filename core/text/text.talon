@@ -22,7 +22,7 @@ escape <user.phrase> over:  "{phrase}"
 # Single abbreviated word. "proud brief app" => App
 {user.formatter_word} <user.abbreviation>:
     user.insert_formatted(abbreviation, formatter_word)
-# Abbreviated word without formatter: "breif application" => app, "breif app" => app
+# Abbreviated word without formatter: "brief application" => app, "brief app" => app
 <user.abbreviation>:        "{abbreviation}"
 
 # Easy access to specific Swedish phrases
