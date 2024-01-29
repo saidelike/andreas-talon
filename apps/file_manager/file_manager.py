@@ -1,3 +1,4 @@
+from pathlib import Path
 from talon import app, Module, Context, actions
 from os import path, environ
 
@@ -49,6 +50,14 @@ class Actions:
     def talon_user() -> str:
         """Get path to talon user"""
         return actions.path.talon_user()
+
+    def andreas_talon() -> str:
+        """Get path to andreas-talon base directory"""
+        return str(Path(actions.user.talon_user()) / "andreas-talon_fork")
+
+    def andreas_settings() -> str:
+        """Get path to andreas-talon settings directory"""
+        return str(Path(actions.user.andreas_talon()) / "settings")
 
     def user_home() -> str:
         """Get path to user home"""
