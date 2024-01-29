@@ -4,7 +4,9 @@ window hide:                app.window_hide()
 window last:                app.window_previous()
 window next:                app.window_next()
 window back:                user.window_focus_last()
-focus last:                 user.window_focus_last()
+# focus last:                 user.window_focus_last()
+focus last [<phrase>]$:
+    user.window_focus_last_with_phrase(phrase or "")
 
 # focus:                      user.window_switcher_menu()
 focus desktop:              user.focus_desktop()
