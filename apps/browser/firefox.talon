@@ -6,7 +6,8 @@ app: firefox
 # we also want to scroll and use Rango
 tag(): browser
 tag(): user.scroll
-tag(): user.rango_direct_clicking
+# we disable direct clicking in Rango by default, so we can spell letters in slack
+# tag(): user.rango_direct_clicking
 
 # Tabs
 # TODO: change this to "scout tab"? need to make a new action in the browser
