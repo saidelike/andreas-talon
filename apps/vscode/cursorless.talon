@@ -1,5 +1,7 @@
+# this file is only active when the "user"-defined "vscode" app is enabled
 app: vscode
 -
+# enable the "user.cursorless_custom_number_small" tag, which is defined in cursorless-talon
 tag(): user.cursorless_custom_number_small
 
 # Cursorless command without targets

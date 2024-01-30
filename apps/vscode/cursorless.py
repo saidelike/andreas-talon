@@ -7,6 +7,7 @@ from ...core.snippets.snippet_types import InsertionSnippet, WrapperSnippet
 mod = Module()
 
 
+# we define new actions that are "cursorless" related
 @mod.action_class
 class Actions:
     def c_use_release():

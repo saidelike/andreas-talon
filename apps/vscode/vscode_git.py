@@ -4,7 +4,8 @@ from talon import Context, Module, actions
 mod = Module()
 
 # this context is only active when the "vscode" app is enabled and we are not in the terminal
-# i.e. we are in the vscode editor
+# i.e. we are in the vscode editor, search, git editor, etc.
+# NOTE: if they should apply on a specific file, they will apply on the currently open file
 ctx = Context()
 ctx.matches = r"""
 app: vscode
