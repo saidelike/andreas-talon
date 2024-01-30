@@ -1,4 +1,4 @@
-tag: user.cursorless_mimic
+not tag: user.cursorless
 -
 
 # Selection
