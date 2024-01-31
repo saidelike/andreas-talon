@@ -2,6 +2,7 @@ not tag: user.cursorless
 -
 
 # Selection
+take (this | dis):          edit.select_word()
 chuck (this | dis):         user.delete_selection_or_word()
 cut (this | dis):           user.cut_selection_or_word()
 copy (this | dis):          user.copy_selection_or_word()
@@ -73,8 +74,8 @@ chuck tail file:
     edit.delete()
 
 # Reformat
-# TODO: make "camel format this" work even if we don't select it, eg "vscode_extensions"
 <user.formatters> (format|form) this:
+    edit.select_word()
     user.reformat_selection(formatters)
 <user.formatters> (format|form) token:
     edit.select_word()
@@ -84,15 +85,16 @@ chuck tail file:
     user.reformat_selection(formatters)
 
 # Homophones
-# TODO: make "phones this" work even if we don't select it
-phones this:                user.homophones_cycle_selected()
+phones this:
+    edit.select_word()
+    user.homophones_cycle_selected()
 phones token:
     edit.select_word()
     user.homophones_cycle_selected()
 
 # Wrappers
-# TODO: make "wrap this" work even if we don't select it
 {user.delimiter_pair_wrap} wrap this:
+    edit.select_word()
     user.delimiters_pair_wrap_selection(delimiter_pair_wrap)
 {user.delimiter_pair_wrap} wrap token:
     edit.select_word()
