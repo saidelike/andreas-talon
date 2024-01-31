@@ -19,6 +19,7 @@ scroll_reversed = False
 cron_job = None
 
 
+# the whole logic about calling foot switch "user"-actions is done here
 def on_interval():
     for key in range(4):
         if last_state[key] != current_state[key]:
@@ -38,6 +39,7 @@ def on_interval():
 cron.interval("16ms", on_interval)
 
 
+# the whole logic about calling foot switch "user"-actions is done here
 def call_down(key: int):
     if key == LEFT:
         actions.user.foot_switch_left_down()
@@ -49,6 +51,7 @@ def call_down(key: int):
         actions.user.foot_switch_top_down()
 
 
+# the whole logic about calling foot switch "user"-actions is done here
 def call_up(key: int, held: bool):
     if key == LEFT:
         actions.user.foot_switch_left_up(held)
@@ -60,6 +63,7 @@ def call_up(key: int, held: bool):
         actions.user.foot_switch_top_up(held)
 
 
+# we define new actions that are "foot switch" related
 @mod.action_class
 class Actions:
     def foot_switch_down_event(key: int):
@@ -149,6 +153,7 @@ class UserActions:
 
 # ---------- Default non-sleep implementation ----------
 ctx_eye_tracker = Context()
+# this context is only active when eye tracking is being currently used or temporarily frozen
 ctx_eye_tracker.matches = r"""
 tag: user.eye_tracker
 tag: user.eye_tracker_frozen
@@ -167,6 +172,8 @@ class EyeTrackerActions:
 
 # ---------- Audio conferencing ----------
 ctx_voip = Context()
+# this context is only active when the "user.voip" tag is enabled
+# in any mode, including when Talon is sleeping
 ctx_voip.matches = r"""
 mode: command
 mode: dictation

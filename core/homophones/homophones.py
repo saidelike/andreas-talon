@@ -19,6 +19,7 @@ def update_used(word: str):
         homophones_last_used[homophone] = {"word": word, "time": time.monotonic()}
 
 
+# we define new actions that are "homophones" related
 @mod.action_class
 class Actions:
     def homophones_get(word: str) -> list[str]:
@@ -28,6 +29,7 @@ class Actions:
         update_used(get_next(word, homophones))
         return homophones
 
+    # this is called from non Cursorless context and Cursorless fallback
     def homophones_cycle_selected():
         """Cycle homophones if the selected word is a homophone"""
         word = actions.edit.selected_text()
@@ -40,6 +42,8 @@ class Actions:
         new_word = format_homophone(word, homophone)
         actions.insert(new_word)
 
+    # eg this is called from:
+    # format_phrase() -> capture_to_words() -> homophones_replace_words()
     def homophones_replace_words(words: list[str]) -> list[str]:
         """Replace words with recently chosen homophones"""
         for i, word in enumerate(words):
@@ -52,6 +56,7 @@ class Actions:
         return words
 
 
+# see cursorless-talon\src\actions\homophones.py
 def get_next(word: str, homophones: list[str]):
     index = (homophones.index(word.lower().strip()) + 1) % len(homophones)
     return homophones[index]
@@ -70,6 +75,7 @@ def get_list(word: str):
     return homophones
 
 
+# see cursorless-talon\src\actions\homophones.py
 def format_homophone(word: str, homophone: str):
     leading_whitespace = re.search(r"^[\s]+", word)
     trailing_whitespace = re.search(r"[\s]+$", word)

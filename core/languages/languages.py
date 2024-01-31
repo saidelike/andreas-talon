@@ -55,9 +55,11 @@ forced_language = ""
 
 mod = Module()
 
+# Declare new global "user.code_extension" and "user.code_language" lists
 mod.list("code_extension", "List of file programming languages file extensions")
 mod.list("code_language", "List of file programming language identifiers")
 
+# Declare a new global "user.code_language_forced" tag
 mod.tag("code_language_forced", "This tag is active when a language mode is forced")
 
 ctx = Context()
@@ -67,6 +69,7 @@ ctx_forced.matches = r"""
 tag: user.code_language_forced
 """
 
+# Initialize "user.code_extension" and "user.code_language" lists
 ctx.lists["user.code_extension"] = {
     **{l.spoken_form: l.extension for l in languages},
     "pie": "py",
@@ -75,8 +78,10 @@ ctx.lists["user.code_extension"] = {
 ctx.lists["user.code_language"] = {l.spoken_form: l.id for l in languages}
 
 
+# "code" has built-in actions that we override here
 @ctx.action_class("code")
 class CodeActions:
+    # Return the active programming language
     def language():
         file_extension = actions.win.file_ext()
         return extension_lang_map.get(file_extension, "")
@@ -84,10 +89,12 @@ class CodeActions:
 
 @ctx_forced.action_class("code")
 class ForcedCodeActions:
+    # Return the active programming language
     def language():
         return forced_language
 
 
+# we define new actions that are "languages" related
 @mod.action_class
 class Actions:
     def code_set_language(language: str):
