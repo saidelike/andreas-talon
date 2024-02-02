@@ -7,12 +7,6 @@ mod = Module()
 ctx = Context()
 ctx.matches = r"""
 language: en
-language: sv
-"""
-
-ctx_sv = Context()
-ctx_sv.matches = r"""
-language: sv
 """
 
 mod.list("phrase_ender", "List of commands that can be used to end a phrase")
@@ -274,12 +268,6 @@ class DictationFormat:
 dictation_formatter = DictationFormat()
 ui.register("app_deactivate", lambda app: dictation_formatter.reset())
 ui.register("win_focus", lambda win: dictation_formatter.reset())
-
-
-@ctx_sv.action_class("user")
-class SwedishUserActions:
-    def dictation_needs_comma_between(before: str, after: str) -> bool:
-        return after == "men" and before[-1].isalpha()
 
 
 @mod.action_class

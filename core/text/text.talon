@@ -25,11 +25,6 @@ escape <user.phrase> over:  "{phrase}"
 # Abbreviated word without formatter: "brief application" => app, "brief app" => app
 <user.abbreviation>:        "{abbreviation}"
 
-# Easy access to specific Swedish phrases
-swe {user.swedish_phrase}:  "{swedish_phrase}"
-{user.formatter_word} swe {user.swedish_phrase}:
-    user.insert_formatted(swedish_phrase, formatter_word)
-
 # Upper case characters
 ship <user.letters> [over]:
     user.insert_formatted(letters, "ALL_UPPERCASE")
