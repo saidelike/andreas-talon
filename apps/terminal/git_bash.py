@@ -24,6 +24,7 @@ win.file_ext: .bashbook
 
 # this context is only active when the above "git_bash" app is enabled
 # or when we are in the vscode terminal
+# or when we have git bash inside window terminal (this is to give priority to git bash vs windows terminal)
 ctx = Context()
 ctx.matches = r"""
 app: git_bash

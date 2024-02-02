@@ -3,6 +3,9 @@ from talon import Module, Context
 mod = Module()
 ctx = Context()
 
+# Declare new global "user.letter", "user.key_arrow", "user.key_special", "user.key_modifier" lists
+# as well as "user.symbol", "user.key_punctuation", "user.key_punctuation_code" lists
+# as well as "user.digit", "user.key_function" lists
 mod.list("letter", "The spoken phonetic alphabet")
 mod.list("key_arrow", "All arrow keys")
 mod.list("key_special", "All special keys")
@@ -33,12 +36,14 @@ ctx.lists["user.key_function"] = {
 }
 
 
+# Declare a capture "<user.key_modifiers>" (due to "key_modifiers" function definition below)
 @mod.capture(rule="{user.key_modifier}+")
 def key_modifiers(m) -> str:
     "One or more modifier keys"
     return "-".join(m)
 
 
+# Declare a capture "<user.key_unmodified>" (due to "key_unmodified" function definition below)
 @mod.capture(
     rule="{user.letter} | {user.digit} | {user.symbol} | {user.key_special} | {user.key_arrow} | {user.key_function}"
 )
@@ -49,12 +54,15 @@ def key_unmodified(m) -> str:
     return m[0]
 
 
+# Declare a capture "<user.key_any>" (due to "key_any" function definition below)
 @mod.capture(rule="{user.key_modifier} | <user.key_unmodified>")
 def key_any(m) -> str:
     "A single key"
     return m[0]
 
 
+# Declare a capture "<user.any_alphanumeric_key>" (due to "any_alphanumeric_key" function definition below)
+# this is used by cursorless for target decorated marks
 @mod.capture(rule="{user.letter} | {user.digit} | {user.symbol}")
 def any_alphanumeric_key(m) -> str:
     "A single alphanumeric key"
@@ -63,18 +71,21 @@ def any_alphanumeric_key(m) -> str:
     return m[0]
 
 
+# Declare a capture "<user.any_alphanumeric_keys>" (due to "any_alphanumeric_keys" function definition below)
 @mod.capture(rule="<user.any_alphanumeric_key>+")
 def any_alphanumeric_keys(m) -> str:
     "One or more alphanumeric keys. Space separated"
     return " ".join(m)
 
 
+# Declare a capture "<user.letter>" (due to "letter" function definition below)
 @mod.capture(rule="{user.letter}")
 def letter(m) -> str:
     """One letter in the alphabet"""
     return m[0]
 
 
+# Declare a capture "<user.letters>" (due to "letters" function definition below)
 @mod.capture(rule="{user.letter}+")
 def letters(m) -> str:
     """One or more letters in the alphabet"""
