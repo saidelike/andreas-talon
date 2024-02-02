@@ -31,6 +31,9 @@ app: git_bash
 
 app: vscode
 and win.title: /\[Terminal\]$/
+
+app: git_bash
+and app: windows_terminal
 """
 
 # we want to be able to use bash commands and browse tabs

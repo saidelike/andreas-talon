@@ -68,7 +68,6 @@ print exit code:            "echo $?\n"
 pipe:                       " | "
 op and:                     " && "
 op or:                      " || "
-terminate:                  key(ctrl-c)
 clear:                      key(ctrl-l)
 revert:                     key(alt-r)
 ssh:                        "ssh "

@@ -25,3 +25,6 @@ run talon deck:             "talon-deck\n"
 
 python version:             "python --version\n"
 java version:               "java --version\n"
+
+# terminal
+terminate:                  key(ctrl-c)
