@@ -12,7 +12,7 @@ escape
 menu
 
 # deli:                       delete
-scratch:                       delete
+scratch:                    delete
 page up:                    pageup
 page down:                  pagedown
 print screen:               printscr
