@@ -79,6 +79,7 @@ def any_alphanumeric_keys(m) -> str:
 
 
 # Declare a capture "<user.letter>" (due to "letter" function definition below)
+# this is used by rango for targets
 @mod.capture(rule="{user.letter}")
 def letter(m) -> str:
     """One letter in the alphabet"""
