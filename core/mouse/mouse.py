@@ -3,6 +3,7 @@ from talon import Context, Module, actions, ui, ctrl
 mod = Module()
 ctx = Context()
 
+# Declare a list "{user.mouse_click}" and define its elements
 mod.list("mouse_click", "Available mouse clicks")
 ctx.lists["user.mouse_click"] = {
     "left": "left",
@@ -20,12 +21,15 @@ ctx.lists["user.mouse_click"] = {
 }
 
 
+# these are Talon-defined "main" actions that we override
 @ctx.action_class("main")
 class MainActions:
     def mouse_click(button: int = 0):
+        # Press and release a mouse button
         ctrl.mouse_click(button=button, hold=16000)
 
 
+# we define new actions that are "mouse" related
 @mod.action_class
 class Actions:
     def mouse_on_pop():

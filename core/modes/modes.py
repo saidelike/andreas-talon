@@ -5,6 +5,7 @@ from typing import Union
 mod = Module()
 ctx = Context()
 
+# this context is only active when in dictation mode
 ctx_dictation = Context()
 ctx_dictation.matches = r"""
 mode: dictation
@@ -15,18 +16,21 @@ sleep_phrases = ["drowse"]
 ctx.lists["user.sleep_phrase"] = {sleep_phrases[0]}
 
 
+# these are "user" actions redefined when in command mode
 @ctx.action_class("user")
 class UserActions:
     def command_dictation_mode_toggle():
         actions.user.dictation_mode()
 
 
+# these are "user" actions redefined when in dictation mode
 @ctx_dictation.action_class("user")
 class DictationUserActions:
     def command_dictation_mode_toggle():
         actions.user.command_mode()
 
 
+# we define new actions that are "modes" related
 @mod.action_class
 class Actions:
     def command_mode(phrase: Union[Phrase, str] = None):

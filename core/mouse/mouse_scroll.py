@@ -3,6 +3,7 @@ import time
 
 mod = Module()
 
+# Declare a new global "user.scroll_speed" setting
 mod.setting(
     "scroll_speed",
     type=float,
@@ -18,6 +19,7 @@ scroll_dir = 1
 scroll_ts = None
 
 
+# we define new actions that are "mouse scroll" related
 @mod.action_class
 class Actions:
     def mouse_scroll_stop():
@@ -37,6 +39,7 @@ class Actions:
         y = times
         if direction == "up":
             y = -y
+        # Scroll the mouse wheel
         actions.mouse_scroll(y, by_lines=True)
 
     def mouse_scrolling(direction: str):
@@ -97,6 +100,7 @@ def scroll_continuous_helper():
         * acceleration_speed
         * scroll_dir
     )
+    # Scroll the mouse wheel
     actions.mouse_scroll(y, by_lines=True)
 
 
@@ -107,6 +111,7 @@ def scroll_gaze_helper():
         return
     rect = window.rect
     y = ((y - gaze_origin_y) / (rect.height / 3)) ** 3
+    # Scroll the mouse wheel
     actions.mouse_scroll(y, by_lines=True)
 
 

@@ -9,6 +9,7 @@ from typing import Optional
 
 mod = Module()
 
+# Declare new global "user.eye_tracker" and "user.eye_tracker_frozen" tags
 mod.tag("eye_tracker", "Indicates that the eye tracker is enabled")
 mod.tag(
     "eye_tracker_frozen",
@@ -29,12 +30,14 @@ tag: user.eye_tracker_frozen
 """
 
 
+# these are "user" actions redefined when eye tracker enabled
 @ctx_eye_tracker.action_class("user")
 class EyeTrackerActions:
     def mouse_on_pop():
         actions.user.mouse_click_with_conditions()
 
 
+# these are "user" actions redefined when eye tracker frozen
 @ctx_frozen.action_class("user")
 class FrozenActions:
     def mouse_on_pop():
@@ -44,6 +47,7 @@ class FrozenActions:
         enable_tracker()
 
 
+# we define new actions that are "eye tracker" related
 @mod.action_class
 class Actions:
     def mouse_control_toggle(enable: Optional[bool] = None):
