@@ -35,7 +35,9 @@ ordinal_words = {
 tens_words = "zero ten twenty thirty forty fifty sixty seventy eighty ninety".split()
 
 # ordinal_numbers maps ordinal words into their corresponding numbers.
+# "first" -> 1, ..., "ninety ninth" -> 99
 ordinal_numbers = {}
+# "first" -> 1, ..., "twentieth" -> 20
 ordinal_small = {}
 
 for n in range(1, 100):
@@ -54,19 +56,24 @@ for n in range(1, 100):
 mod = Module()
 ctx = Context()
 
+# Declare a list "{user.ordinals}" and "{user.ordinals_small}"
 mod.list("ordinals", "List of ordinals [1, 99]")
 mod.list("ordinals_small", "List of small ordinals [1, 20]")
 
+# "first" -> "first", ..., "ninety ninth" -> "ninety ninth"
 ctx.lists["user.ordinals"] = ordinal_numbers.keys()
+# "first" -> "first", ..., "twentieth" -> "twentieth"
 ctx.lists["user.ordinals_small"] = ordinal_small.keys()
 
 
+# Declare a capture "<user.ordinals>" (due to "ordinals" function definition below)
 @mod.capture(rule="{user.ordinals}")
 def ordinals(m) -> int:
     """Returns a single ordinal as a integer"""
     return int(ordinal_numbers[m.ordinals])
 
 
+# Declare a capture "<user.ordinals_small>" (due to "ordinals_small" function definition below)
 @mod.capture(rule="{user.ordinals_small}")
 def ordinals_small(m) -> int:
     """Returns a single small ordinal as a integer"""

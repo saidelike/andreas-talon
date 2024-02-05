@@ -151,14 +151,17 @@ def split_list(value, l: list) -> Iterator:
 
 
 # ---------- CAPTURES ----------
+# (zero|...|ninety|...|decillion) with loads of missing numbers
 number_word = "(" + "|".join(numbers_map.keys()) + ")"
 # don't allow numbers to start with scale words like "hundred", "thousand", etc
 leading_words = numbers_map.keys() - scales_map.keys()
 leading_words -= {'oh', 'o'} # comment out to enable bare/initial "oh"
+# (one|...|ninety) with loads of missing numbers
 number_word_leading = f"({'|'.join(leading_words)})"
 
 # Only allow numbers above nine by themself
 leading_words_dd = {*teens_map.keys(),  *tens_map.keys()}
+# (eleven|...|thirty)
 number_word_dd = f"({'|'.join(leading_words_dd)})"
 
 # Numbers used in `number_small` capture
@@ -166,18 +169,24 @@ number_small_list = [*digits, *teens]
 for ten in tens:
     number_small_list.append(ten)
     number_small_list.extend(f"{ten} {digit}" for digit in digits[1:])
+
+# "zero" -> 0, ..., "ninety nine" -> 99
 number_small_map = {n: i for i, n in enumerate(number_small_list)}
 
+# Declare a list "{user.number_small}"
 mod.list("number_small", "List of small numbers")
+# "zero" -> "zero", ..., "ninety nine" -> "ninety nine"
 ctx.lists["user.number_small"] = number_small_map.keys()
 
 
+# Declare a capture "<user.number_string>" (due to "number_string" function definition below)
 @mod.capture(rule=f"{number_word_leading} ([and] {number_word})*")
 def number_string(m) -> str:
     """Parses a number phrase, returning that number as a string."""
     return parse_number(list(m))
 
 
+# Declare a capture "<user.number_dd>" (due to "number_dd" function definition below)
 @mod.capture(rule=(
     f"{number_word_dd} | "
     f"{number_word_leading} ([and] {number_word})+"
@@ -187,23 +196,27 @@ def number_dd(m) -> str:
     return parse_number(list(m))
 
 
+# Declare a capture "<user.number>" (due to "number" function definition below)
 @ctx.capture("number", rule="<user.number_string>")
 def number(m) -> int:
     """Parses a number phrase, returning it as an integer."""
     return int(m.number_string)
 
 
+# Declare a capture "<user.number_small>" (due to "number_small" function definition below)
 @ctx.capture("number_small", rule="{user.number_small}")
 def number_small(m) -> int:
     return number_small_map[m.number_small]
 
 
+# Declare a capture "<user.number_float_string>" (due to "number_float_string" function definition below)
 @mod.capture(rule="<user.number_string> point <user.number_string>")
 def number_float_string(m) -> str:
     """Parses a float number phrase, returning that number as a string."""
     return f"{m.number_string_1}.{m.number_string_2}"
 
 
+# Declare a capture "<user.number_prefix>" (due to "number_prefix" function definition below)
 @mod.capture(rule="(numb | number) (<user.number_string> | <user.number_float_string>)")
 def number_prefix(m) -> str:
     """Parses a prefixed number phrase, returning that number as a string."""
@@ -213,6 +226,7 @@ def number_prefix(m) -> str:
         return m.number_float_string
 
 
+# Declare a capture "<user.digit>" (due to "digit" function definition below)
 @mod.capture(rule=f"{'|'.join(digits[1:])}")
 def digit(m) -> int:
     """Parses a (non zero) digit phrase, returning it as an integer"""
