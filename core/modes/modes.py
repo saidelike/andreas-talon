@@ -10,15 +10,9 @@ ctx_dictation.matches = r"""
 mode: dictation
 """
 
-ctx_sv = Context()
-ctx_sv.matches = r"""
-language: sv
-"""
-
 mod.list("sleep_phrase", "Phrase used to sleep Talon")
-sleep_phrases = ["drowse", "sömnig"]
+sleep_phrases = ["drowse"]
 ctx.lists["user.sleep_phrase"] = {sleep_phrases[0]}
-ctx_sv.lists["user.sleep_phrase"] = sleep_phrases
 
 
 @ctx.action_class("user")
@@ -53,11 +47,6 @@ class Actions:
 
     def command_dictation_mode_toggle():
         """Toggle between command and dictation mode"""
-
-    def swedish_dictation_mode(phrase: Union[Phrase, str] = None):
-        """Enter swedish dictation mode and re-evaluate phrase"""
-        ctx.tags = ["user.swedish"]
-        actions.user.dictation_mode(phrase)
 
     def mixed_mode(phrase: Union[Phrase, str] = None):
         """Enter mixed mode and re-evaluate phrase"""
