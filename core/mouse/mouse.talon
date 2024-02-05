@@ -30,6 +30,7 @@ track gaze:                 tracking.control_gaze_toggle(true)
 track head:                 tracking.control_gaze_toggle(false)
 track debug:                tracking.control_debug_toggle()
 track calibrate:            tracking.calibrate()
+freeze:                     user.mouse_freeze_toggle()
 
 # Cursor
 cursor center:              user.mouse_move_center_window()
