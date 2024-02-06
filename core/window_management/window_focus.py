@@ -27,8 +27,9 @@ class Actions:
     def window_focus_last_with_phrase(phrase: Phrase = None):
         """Switch focus to last window and parse the phrase"""
         actions.user.window_focus_last()
-        actions.sleep("200ms")
-        actions.user.rephrase(phrase, delta_start=0.1)
+        if phrase:
+            actions.sleep("200ms")
+            actions.user.rephrase(phrase, delta_start=0.1)
 
     def window_focus_name(name: str, phrase: Phrase = None):
         """Focus application named <name>"""
