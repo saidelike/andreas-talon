@@ -336,6 +336,15 @@ class Actions:
         sibling_full_name = f"{short_name}.{sibling_extension}"
         actions.user.find_file(sibling_full_name)
 
+    # https://superuser.com/questions/1361113/open-file-from-vscode-file-explorer-using-keyboard
+    def vscode_explore_file(direction: str = "up"):
+        """open the next/previous file in the vscode bar explorer"""
+        title = actions.win.title()
+        if not title.endswith("focus:[Folders]"):
+            actions.user.vscode("workbench.view.explorer")
+        actions.key(direction)
+        actions.key("space")
+
 
 def empty_selection():
     if actions.edit.selected_text():

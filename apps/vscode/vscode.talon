@@ -77,6 +77,9 @@ bar scopes:                 user.vscode("cursorless.scopes.focus")
 bar file:                   user.vscode("workbench.files.action.showActiveFileInExplorer")
 bar collapse:               user.vscode("workbench.files.action.collapseExplorerFolders")
 
+explore next:               user.vscode_explore_file("down")
+explore last:               user.vscode_explore_file("up")
+
 # references and definitions
 (reference|ref) last:       user.vscode("references-view.prev")
 (reference|ref) next:       user.vscode("references-view.next")
