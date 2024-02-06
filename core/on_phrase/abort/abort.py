@@ -8,15 +8,9 @@ import time
 mod = Module()
 ctx = Context()
 
-ctx_sv = Context()
-ctx_sv.matches = r"""
-language: sv
-"""
-
 mod.list("abort_phrase", "Phrase used to abort/cancel current spoken phrase")
-abort_phrases = ["cancel", "canceled", "avbryt"]
+abort_phrases = ["cancel", "canceled"]
 ctx.lists["user.abort_phrase"] = abort_phrases[:-1]
-ctx_sv.lists["user.abort_phrase"] = abort_phrases
 
 
 @dataclass

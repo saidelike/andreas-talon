@@ -1,7 +1,6 @@
 mode: command
 mode: dictation
 language: en
-language: sv
 -
 
 # eg "say hello world cancel" does nothing
