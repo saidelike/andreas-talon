@@ -1,6 +1,7 @@
 from talon import Module, actions, cron
 
 mod = Module()
+# Declare a new global "user.scroll" tag
 mod.tag("scroll")
 
 scroll_direction = None
@@ -8,6 +9,7 @@ scroll_job = None
 scroll_speed = 100
 
 
+# we define new actions that are "scroll" related
 @mod.action_class
 class Actions:
     def scroll_up():

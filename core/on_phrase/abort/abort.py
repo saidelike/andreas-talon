@@ -8,6 +8,7 @@ import time
 mod = Module()
 ctx = Context()
 
+# Declare a list "{user.abort_phrase}" and initialize it
 mod.list("abort_phrase", "Phrase used to abort/cancel current spoken phrase")
 abort_phrases = ["cancel", "canceled"]
 ctx.lists["user.abort_phrase"] = abort_phrases[:-1]

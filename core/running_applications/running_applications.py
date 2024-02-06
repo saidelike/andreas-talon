@@ -10,8 +10,10 @@ mod.list("running_application", "All running applications")
 ctx.lists["user.running_application"] = {}
 
 # Mapping of current overrides
+# eg {'microsoft visual studio 2019': 'Visual Studio', ...}, see app_name_overrides.csv
 overrides = {}
 # List of running applications
+# eg {'Code': 'Visual Studio Code', 'Discord': 'Discord', ...}
 running_applications = {}
 
 
@@ -50,6 +52,7 @@ def update_overrides(csv_dict: dict):
     update_running()
 
 
+# we define new actions that are "running applications" related
 @mod.action_class
 class Actions:
     def get_running_applications() -> dict[str, str]:

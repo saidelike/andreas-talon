@@ -6,6 +6,7 @@ os: windows
 """
 
 
+# these are "user" actions inherited from "operating system"
 @ctx.action_class("user")
 class UserActions:
     def system_shutdown():

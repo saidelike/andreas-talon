@@ -14,6 +14,7 @@ mode: dictation
 """
 
 
+# these are "user" actions inherited from "noises"
 @ctx.action_class("user")
 class UserActions:
     def noise_pop():
@@ -44,6 +45,7 @@ class UserActions:
         actions.user.mouse_scroll_stop()
 
 
+# we define new actions that are "noises" related
 @mod.action_class
 class Actions:
     def noise_debounce(name: str, active: bool):
