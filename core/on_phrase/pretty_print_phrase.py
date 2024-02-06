@@ -3,6 +3,7 @@ from .analyze_phrase.types import AnalyzedPhrase
 
 mod = Module()
 
+# Declare a new global "user.pretty_print_phrase" setting
 mod.setting(
     "pretty_print_phrase",
     type=bool,

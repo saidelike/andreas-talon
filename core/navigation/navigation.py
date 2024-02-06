@@ -6,7 +6,7 @@ mod = Module()
 mod.tag("navigation")
 
 
-# Declare actions that are global too (not related to any tag)
+# we define new actions that are "navigation" related
 # Note that everything you define on the module is in the "user" namespace. You can't change that.
 @mod.action_class
 class Actions:

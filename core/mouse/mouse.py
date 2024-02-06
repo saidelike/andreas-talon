@@ -3,7 +3,7 @@ from talon import Context, Module, actions, ui, ctrl
 mod = Module()
 ctx = Context()
 
-# Declare a list "{user.mouse_click}" and define its elements
+# Declare a list "{user.mouse_click}" and initialize it
 mod.list("mouse_click", "Available mouse clicks")
 ctx.lists["user.mouse_click"] = {
     "left": "left",

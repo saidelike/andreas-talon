@@ -3,6 +3,7 @@ from talon.grammar import Phrase
 
 mod = Module()
 
+# Declare a new global "user.print_phrase_timings" setting
 mod.setting(
     "print_phrase_timings",
     type=bool,

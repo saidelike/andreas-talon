@@ -58,6 +58,7 @@ def show_subtitle(text: str):
         possibly_show_text(text, is_subtitle=True)
 
 
+# we define new actions that are "subtitles and notifications" related
 @mod.action_class
 class Actions:
     def toggle_subtitles(override: bool = None):

@@ -36,7 +36,7 @@ class AppActions:
         actions.key("ctrl-shift-t")
 
 
-# Declare actions that are global too (not related to any tag)
+# we define new actions that are "tabs" related
 # Note that everything you define on the module is in the "user" namespace. You can't change that.
 @mod.action_class
 class TabActions:

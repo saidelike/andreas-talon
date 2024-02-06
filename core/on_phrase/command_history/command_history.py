@@ -54,6 +54,7 @@ def command_history_append(analyzed_phrase: AnalyzedPhrase):
     history = history[-size:]
 
 
+# we define new actions that are "command history" related
 @mod.action_class
 class Actions:
     def command_history_toggle():

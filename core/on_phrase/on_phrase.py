@@ -10,6 +10,7 @@ from .sleep_update_phrase import sleep_update_phrase
 
 mod = Module()
 
+# Declare a new global "user.analyze_phrase" setting
 mod.setting(
     "analyze_phrase",
     type=bool,

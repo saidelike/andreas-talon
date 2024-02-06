@@ -30,6 +30,7 @@ abort_specific_phrases: AbortPhrases = None
 ts_threshold: float = None
 
 
+# we define new actions that are "abort" related
 @mod.action_class
 class Actions:
     def abort_current_phrase():
