@@ -6,7 +6,24 @@ name: link
 [$text$1]($0)
 ---
 
+name: linkWrap
+
+$1.wrapperPhrase: link
+$1.wrapperScope: token
+-
+[$1]($0)
+---
+
 name: linkWithUri
 -
 [$text$0]($uri)
+---
+
+name: imageLink
+phrase: image link
+
+$0.wrapperPhrase: image link
+$0.wrapperScope: token
+-
+![](img/$0.png)
 ---
