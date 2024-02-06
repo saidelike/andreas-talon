@@ -5,21 +5,6 @@ ctx.matches = r"""
 os: windows
 """
 
-ctx.lists["user.launch_command"] = {
-    "control panel": "control",
-    "sound settings": "control mmsys.cpl sounds",
-    "system settings": "start ms-settings:",
-    "taskbar settings": "start ms-settings:taskbar",
-    "advanced settings": "systempropertiesadvanced.exe",
-    "task manager": "taskmgr",
-    "services": "services.msc",
-    "device manager": "devmgmt.msc",
-    "paint": "mspaint",
-    "notepad": "notepad",
-    "explorer": "explorer",
-    "code": "code",
-}
-
 
 @ctx.action_class("user")
 class UserActions:

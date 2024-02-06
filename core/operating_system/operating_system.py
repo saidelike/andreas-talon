@@ -5,7 +5,6 @@ mod = Module()
 mod.list("launch_command", "List of applications to launch")
 
 ctx = Context()
-ctx.lists["user.launch_command"] = {}
 
 child_processes = []
 
