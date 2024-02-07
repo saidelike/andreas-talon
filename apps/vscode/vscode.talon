@@ -145,6 +145,7 @@ git pull requests:          user.git_open_url("PullRequests")
 git diff files:             user.vscode("git.openAllChanges")
 git open:                   user.vscode("git.openFile")
 git stage:                  user.vscode("git.stage")
+git stage all:              user.vscode("git.stageAll")
 git unstage:                user.vscode("git.unstage")
 
 # Git commit
