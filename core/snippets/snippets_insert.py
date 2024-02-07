@@ -6,6 +6,7 @@ import re
 mod = Module()
 
 
+# we define new actions that are "snippets insert" related
 @mod.action_class
 class Actions:
     def insert_snippet(body: str):

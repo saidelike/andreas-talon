@@ -10,6 +10,7 @@ SNIPPETS_DIR = Path(__file__).parent / "snippets"
 
 mod = Module()
 
+# Declare new global "user.snippet", "user.snippet_with_phrase", "user.snippet_wrapper" lists
 mod.list("snippet", "List of insertion snippets")
 mod.list("snippet_with_phrase", "List of insertion snippets containing a text phrase")
 mod.list("snippet_wrapper", "List of wrapper snippets")
@@ -27,6 +28,7 @@ for lang in language_ids:
     context_map[lang] = ctx
 
 
+# we define new actions that are "snippets" related
 @mod.action_class
 class Actions:
     def get_snippet(name: str) -> Snippet:
