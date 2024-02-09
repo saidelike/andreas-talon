@@ -271,6 +271,7 @@ disk raw:                   user.save_without_formatting()
 disk files:                 user.vscode("workbench.action.files.saveFiles")
 copy command id:            user.copy_command_id()
 scout again:                user.vscode("rerunSearchEditorSearch")
+confetti:                   user.vscode('cursorless.toggleDecorations')
 generate range [from <number_small>]:
     user.vscode("andreas.generateRange", number_small or 1)
 
