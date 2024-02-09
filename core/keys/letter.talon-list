@@ -8,7 +8,8 @@ batt:       b
 cap:        c
 drum:       d
 each:       e
-fine:       f
+# fine:       f
+fin:       f
 gust:       g
 harp:       h
 sit:        i
@@ -36,7 +37,8 @@ urch:       u
 vest:       v
 whale:      w
 plex:       x
-yank:       y
+yell:       y
+# yank:       y
 zip:        z
 # onyx:       å
 # adder:      ä
