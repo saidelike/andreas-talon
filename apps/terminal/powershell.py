@@ -34,6 +34,11 @@ class EditActions:
 # these are "user" actions
 @ctx.action_class("user")
 class UserActions:
+    # ----- Navigation -----
+    # inherited from "file_manager.py"
+    def file_manager_go_parent():
+        actions.user.file_manager_go("..")
+
     # ----- Path -----
     # inherited from "file_manager.py"
     def file_manager_go(path: str):

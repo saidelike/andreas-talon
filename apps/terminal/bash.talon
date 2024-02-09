@@ -13,6 +13,7 @@ dir <user.letters>$:        "cd {letters}"
 dir <user.text> tab$:       "cd {text}\t"
 dir <user.letters> tab$:    "cd {letters}\t"
 
+# TODO: merge the below commands with the other terminals
 list:                       "ls\n"
 list all:                   "ls -a\n"
 list long:                  "ls -lah\n"
