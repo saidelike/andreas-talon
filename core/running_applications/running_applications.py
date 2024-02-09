@@ -39,6 +39,7 @@ def update_running():
     running = {}
     for app in ui.apps(background=False):
         name = parse_name(app.name)
+        # print(f"{app.name} -> {name}")
         if name:
             running[name] = app.name
     running_applications = running
