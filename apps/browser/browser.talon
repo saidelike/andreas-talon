@@ -31,4 +31,5 @@ show cache:                 browser.show_clear_cache()
 
 dev tools:                  browser.toggle_dev_tools()
 
-fullscreen:                 key(f11)
+# this allows hiding the actual tabs at the very top
+fullscreen switch:          key(f11)
