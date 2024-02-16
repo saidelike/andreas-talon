@@ -13,7 +13,4 @@ and app.exe: conhost.exe
 os: windows
 and app.exe: WindowsTerminal.exe
 and title: Talon - REPL
-
-os: windows
-and tag: user.vim_terminal_repl
 """

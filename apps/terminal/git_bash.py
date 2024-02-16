@@ -8,10 +8,6 @@ mod.apps.git_bash = """
 app: windows_terminal
 and win.title: /MINGW64:/i
 """
-mod.apps.git_bash = """
-os: windows
-and tag: user.vim_terminal_git_bash
-"""
 # This is when opening "Git Bash" standalone
 mod.apps.git_bash = """
 os: windows

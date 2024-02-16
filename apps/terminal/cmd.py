@@ -11,9 +11,6 @@ and win.title: Command Prompt
 
 os: windows
 and win.title: /C:\\Windows\\System32\\cmd.exe/
-
-os: windows
-and tag: user.vim_terminal_cmd
 """
 
 # this context is only active when the above "cmd" app is enabled

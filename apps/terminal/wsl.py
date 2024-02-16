@@ -15,9 +15,6 @@ and app.name: Microsoft Windows Subsystem for Linux Launcher
 
 os: windows
 and app.exe: wsl.exe
-
-os: windows
-and tag: user.vim_terminal_wsl
 """
 
 ctx = Context()
