@@ -4,6 +4,7 @@ app: cmd
 tag(): terminal
 
 talon repl:                 insert('"C:\\Program Files\\Talon\\python.exe" "C:\\Program Files\\Talon\\repl.py"')
+git bash:                   insert('"C:\\Program Files\\Git\\bin\\bash.exe" -li')
 
 # TODO: merge the below commands with the other terminals
 tree files:                 "tree /f\n"
