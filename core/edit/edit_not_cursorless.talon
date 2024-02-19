@@ -75,7 +75,7 @@ chuck tail file:
 
 # Reformat
 <user.formatters> (format|form) this:
-    edit.select_word()
+    user.set_selection_on_word_if_none()
     user.reformat_selection(formatters)
 <user.formatters> (format|form) token:
     edit.select_word()
@@ -86,7 +86,7 @@ chuck tail file:
 
 # Homophones
 phones this:
-    edit.select_word()
+    user.set_selection_on_word_if_none()
     user.homophones_cycle_selected()
 phones token:
     edit.select_word()
@@ -94,7 +94,7 @@ phones token:
 
 # Wrappers
 {user.delimiter_pair_wrap} wrap this:
-    edit.select_word()
+    user.set_selection_on_word_if_none()
     user.delimiters_pair_wrap_selection(delimiter_pair_wrap)
 {user.delimiter_pair_wrap} wrap token:
     edit.select_word()

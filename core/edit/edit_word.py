@@ -112,3 +112,9 @@ class Actions:
             actions.edit.paste()
         else:
             actions.user.paste_word()
+
+    def set_selection_on_word_if_none():
+        """Set selection on word under cursor if nothing is selected"""
+        text = actions.edit.selected_text()
+        if len(text) == 0:
+            actions.edit.select_word()
