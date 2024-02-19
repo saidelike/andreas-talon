@@ -16,6 +16,7 @@ ctx.lists["user.phrase_ender"] = {
     "question": "?",
     "bang": "!",
     "slap": "\n",
+    "stack": ":",
 }
 
 
@@ -38,7 +39,7 @@ def phrase(m) -> str:
 
 @mod.capture(rule="(spell | {user.letter}) {user.letter}+")
 def spell(m) -> str:
-    """Spell word phoneticly"""
+    """Spell word phonetically"""
     return "".join(m.letter_list)
 
 
