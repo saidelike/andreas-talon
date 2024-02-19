@@ -5,7 +5,8 @@ list: user.symbol
 # and they are useful in cursorless for target decorated marks
 void:              space
 dot:               .
-point:             .
+# disable for now to avoid false positive with "void"
+# point:             .
 comma:             ,
 stack:             :
 semi:              ;
