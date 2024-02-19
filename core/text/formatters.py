@@ -226,6 +226,7 @@ formatter_list = [
 
 formatters_dict = {f.id: f for f in formatter_list}
 
+# Code formatters that are also used for reformating
 formatters_code = {
     "smash": "NO_SPACES",
     "camel": "CAMEL_CASE",
@@ -239,6 +240,7 @@ formatters_code = {
     # "packed": "DOUBLE_COLON_SEPARATED",
 }
 
+# Prose formatters that are also used for reformating
 formatters_prose = {
     "sentence": "SENTENCE",
     "sense": "SENTENCE",
@@ -284,12 +286,14 @@ ctx.lists["user.formatter_word"] = {
 }
 
 
+# Declare a capture "<user.formatters>" (due to "formatters" function definition below)
 @mod.capture(rule="{user.formatter}+")
 def formatters(m) -> str:
     "Returns a comma-separated string of formatters e.g. 'SNAKE,DUBSTRING'"
     return ",".join(m)
 
 
+# we define new actions that are "formatters" related
 @mod.action_class
 class Actions:
     def insert_formatted(text: str, formatters: str):

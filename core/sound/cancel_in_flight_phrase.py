@@ -4,6 +4,7 @@ from talon import Module, actions, app
 mod = Module()
 
 
+# we define new actions that are "cancel in flight" related
 @mod.action_class
 class Actions:
     def cancel_in_flight_phrase():

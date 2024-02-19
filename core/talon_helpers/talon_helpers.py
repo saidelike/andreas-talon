@@ -24,6 +24,7 @@ os: windows
 """
 
 
+# we define new actions that are "talon helpers" related
 @mod.action_class
 class Actions:
     def talon_add_context_clipboard_python():
@@ -94,6 +95,9 @@ class Actions:
         """Search for non alpha keys in meta lists"""
         for n, l in registry.lists.items():
             for ml in l:
+                # print(f"{n}: {ml}")
+                # if not isinstance(ml, set):
+                #     continue
                 for v in ml:
                     if re.search(r"[^a-zA-Z' ]", v):
                         print(f"{n}: {v}")

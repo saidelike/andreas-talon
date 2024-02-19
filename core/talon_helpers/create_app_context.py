@@ -10,6 +10,7 @@ APPS_DIR = Path(__file__).parent.parent.parent / "apps"
 mod = Module()
 
 
+# we define new actions that are "create app context" related
 @mod.action_class
 class Actions:
     def talon_create_app_context():

@@ -15,6 +15,11 @@ talon print lists:          print(" \n{user.talon_get_lists()}")
 talon print actions:        print(" \n{user.talon_get_actions()}")
 talon print actions long:   print(" \n{user.talon_get_actions_long()}")
 talon print <user.text> actions: print(" \n{user.talon_get_actions_search(text)}")
+# TODO: the below command is not working at the moment
+# Talon shows warning in the log about invalid character in a Talon list, but Talon didn't tell you what list or what value.
+# 2024-01-12 22:22:09.234 WARNING list 'user.abbreviation' skipped unknown tokens: ['-', '.', '3', '5', ':', '[', ']']
+# This message didn't actually have the list name in it if you go back to older Talon versions. Was basically impossible trying to debug
+# This is not needed any more. But still Talon only gives you that warning when you're actually using the list. This implementation makes sure that you have no problems in any list
 talon print list problems:  user.talon_print_list_problems()
 talon print core:           print(" \n{user.talon_get_core()}")
 
@@ -30,6 +35,7 @@ talon copy core:            clip.set_text(user.talon_get_core())
 
 talon copy python context:  user.talon_add_context_clipboard_python()
 talon copy context:         user.talon_add_context_clipboard()
+# TODO: the below command is not working at the moment
 talon copy commands:        user.help_copy_all_commands()
 
 talon create app context:   user.talon_create_app_context()

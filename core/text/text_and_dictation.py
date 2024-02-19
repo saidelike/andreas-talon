@@ -23,6 +23,8 @@ ctx.lists["user.phrase_ender"] = {
 # ----- Captures used in both command and dictation mode -----
 
 
+# Declare a capture "<user.word>" (due to "word" function definition below)
+# NOTE: we define a "user.word" as either a native Talon "word" or some "user.vocabulary" defined in a list
 @mod.capture(rule="{user.vocabulary} | <word>")
 def word(m) -> str:
     """A single word, including user-defined vocabulary."""
@@ -31,18 +33,23 @@ def word(m) -> str:
 
 
 # Used to escape numbers and symbols
+# Declare a capture "<user.phrase>" (due to "phrase" function definition below)
+# NOTE: we define a "user.phrase" as a native Talon "phrase" with a combination of some "user.vocabulary" defined in a list
 @mod.capture(rule="({user.vocabulary} | <phrase>)+")
 def phrase(m) -> str:
     """A phrase(sequence of words), including user-defined vocabulary."""
     return format_phrase(m)
 
 
+# Declare a capture "<user.spell>" (due to "spell" function definition below)
+# NOTE: if we say more than 2 letters in a row, it will be interpreted as spelling
 @mod.capture(rule="(spell | {user.letter}) {user.letter}+")
 def spell(m) -> str:
     """Spell word phonetically"""
     return "".join(m.letter_list)
 
 
+# Declare a capture "<user.placeholder>" (due to "placeholder" function definition below)
 @mod.capture(rule="blah")
 def placeholder(m) -> str:
     """Placeholder word"""
@@ -59,6 +66,7 @@ text_rule_parts = [
     "<phrase>",
 ]
 
+# a user.prose is similar to a user.text except it includes a placeholder, and it is auto-spaced and capitalized
 prose_rule_parts = [
     "{user.vocabulary}",
     "{user.key_punctuation}",
@@ -75,23 +83,27 @@ code_rule = text_rule.replace("{user.key_punctuation}", "{user.key_punctuation_c
 prose_role = f"({'|'.join(prose_rule_parts)})+"
 
 
+# Declare a capture "<user.text>" (due to "text" function definition below)
 @mod.capture(rule=text_rule)
 def text(m) -> str:
     """Mixed words, numbers and punctuation, including user-defined vocabulary, abbreviations and spelling."""
     return format_phrase(m)
 
 
+# Declare a capture "<user.text_code>" (due to "text_code" function definition below)
 @mod.capture(rule=code_rule)
 def text_code(m) -> str:
     """Same as <user.text>, but with fewer punctuations"""
     return format_phrase(m)
 
 
+# Declare a capture "<user.prose>" (due to "prose" function definition below)
 @mod.capture
 def prose() -> str:
     """Same as <user.text>, but auto-spaced & capitalized."""
 
 
+# Declare a capture "<user.prose_ctx>" (due to "prose_ctx" function definition below)
 # The prose capture needs to be defined on the context to work with Swedish dictation.
 @ctx.capture("user.prose", rule=prose_role)
 def prose_ctx(m) -> str:

@@ -19,7 +19,7 @@ escape <user.phrase> over:  "{phrase}"
 # Single word: "word up" => up, "proud up" => Up
 {user.formatter_word} <user.word>:
     user.insert_formatted(word, formatter_word)
-# Single abbreviated word. "proud brief app" => App
+# Single abbreviated word. "proud brief application" => App
 {user.formatter_word} <user.abbreviation>:
     user.insert_formatted(abbreviation, formatter_word)
 # Abbreviated word without formatter: "brief application" => app, "brief app" => app

@@ -7,6 +7,7 @@ mod.list("microphone_device", "Microphone devices")
 mod.list("playback_microphone_pair", "Playback / microphone device pair")
 
 
+# we define new actions that are "sound" related
 @mod.action_class
 class Actions:
     def volume_up():
