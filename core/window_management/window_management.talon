@@ -43,6 +43,7 @@ snap {user.running_application} <user.snap_screen> {user.snap_position}:
 (snap | move) {user.running_application} back:
     user.revert_application_window_position(running_application)
 
+# TODO: should we add another word before the running application?
 snap {user.running_application}:
     user.swap_active_window_position_with_application(running_application)
 

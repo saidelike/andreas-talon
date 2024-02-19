@@ -18,6 +18,7 @@ class DictateActionsEn:
         return phrase_replacer_en.replace(words)
 
 
+# we define new actions that are "vocabulary" related
 @mod.action_class
 class Actions:
     def edit_words_to_replace():

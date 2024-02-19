@@ -72,12 +72,14 @@ mod.list(
 ctx.lists["user.snap_position"] = snap_positions.keys()
 
 
+# Declare a capture "<user.prev_next>" (due to "prev_next" function definition below)
 @mod.capture(rule="last | next")
 def prev_next(m) -> str:
     "Previous or next position"
     return "previous" if "last" == m[0] else "next"
 
 
+# Declare a capture "<user.snap_screen>" (due to "snap_screen" function definition below)
 @mod.capture(
     # rule="<user.prev_next> screen | screen (<user.prev_next> | <number_small>)"
     rule="<user.prev_next> | screen <number_small>"
@@ -90,6 +92,7 @@ def snap_screen(m) -> Union[int, str]:
         return m.prev_next
 
 
+# we define new actions that are "window snap" related
 @mod.action_class
 class Actions:
     def snap_active_window_to_screen(screen_desc: Union[int, str]):

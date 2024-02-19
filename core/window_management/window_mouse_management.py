@@ -11,6 +11,7 @@ class Side:
     distance: int
 
 
+# we define new actions that are "window mouse management" related
 @mod.action_class
 class Actions:
     def move_window_side_to_cursor_position():

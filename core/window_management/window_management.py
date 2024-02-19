@@ -12,6 +12,7 @@ ctx.lists["user.resize_direction"] = {"in", "out"}
 ctx.lists["user.resize_size"] = {"small", "medium", "large"}
 
 
+# we define new actions that are "window management" related
 @mod.action_class
 class Actions:
     def window_set_rect(window: ui.Window, rect: ui.Rect):

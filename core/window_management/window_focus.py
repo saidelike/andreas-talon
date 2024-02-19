@@ -18,6 +18,7 @@ def focus_name(name: str):
     actions.user.help_running_apps_hide()
 
 
+# we define new actions that are "window focus" related
 @mod.action_class
 class Actions:
     def window_focus_last():

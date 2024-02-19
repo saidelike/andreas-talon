@@ -6,15 +6,19 @@ mod = Module()
 ctx = Context()
 
 
+# "app" has built-in actions that we override here
 @ctx.action_class("app")
 class AppActions:
+    # Switch to previous window for this app
     def window_previous():
         cycle_windows(ui.active_app(), -1)
 
+    # Switch to next window for this app
     def window_next():
         cycle_windows(ui.active_app(), 1)
 
 
+# we define new actions that are "ui" related
 @mod.action_class
 class Actions:
     def get_app(name: str) -> ui.App:
