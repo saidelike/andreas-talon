@@ -3,7 +3,7 @@ from subprocess import call
 
 mod = Module()
 mod.list("playback_device", "Playback devices")
-mod.list("microhpone_device", "Microphone devices")
+mod.list("microphone_device", "Microphone devices")
 mod.list("playback_microphone_pair", "Playback / microphone device pair")
 
 
@@ -53,21 +53,16 @@ os: windows
 ctx_win.lists["user.playback_device"] = {
     "Headphones": "Headphones",
     "Speakers": "Speakers",
-    "TV": "TV",
-    "razer": "Razer headphones",
 }
 
-ctx_win.lists["user.microhpone_device"] = {
-    "internal": "Internal_mic",
-    "dpa": "DPA",
-    "razer": "Razer microphone",
-    "blue yeti": "Blue Yeti",
+ctx_win.lists["user.microphone_device"] = {
+    "wireless": "Wireless Go Microphone",
+    "wired": "Shure Microphone",
 }
 
 playback_microphone_pair = {
-    "headphones": ["Headphones", "Headphones_mic"],
-    "solo": ["Speakers", "DPA"],
-    "razer": ["Razer headphones", "Razer microphone"],
+    "moving": ["Speakers", "Wireless Go Microphone"],
+    "static": ["Headphones", "Shure Microphone"],
 }
 ctx_win.lists["user.playback_microphone_pair"] = playback_microphone_pair.keys()
 
@@ -75,6 +70,7 @@ ctx_win.lists["user.playback_microphone_pair"] = playback_microphone_pair.keys()
 @ctx_win.action_class("user")
 class UserActionsWin:
     def change_sound_device(name: str):
+        # NOTE: only one of them will work, but that's fine
         change_sound_device_win(name, 1)
         change_sound_device_win(name, 2)
 
@@ -85,6 +81,8 @@ class UserActionsWin:
         actions.user.change_sound_device(pair[1])
 
 
+# requires https://www.nirsoft.net/utils/nircmd-x64.zip in the PATH
+# https://nircmd.nirsoft.net/setdefaultsounddevice.html
 def change_sound_device_win(name: str, role: int):
     """Roles: 0: Console, 1: Multimedia, 2: Communications"""
     call(["nircmd.exe", "setdefaultsounddevice", name, str(role)])
