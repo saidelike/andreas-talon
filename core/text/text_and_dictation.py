@@ -117,7 +117,6 @@ ctx_dictation = Context()
 ctx_dictation.matches = r"""
 mode: dictation
 language: en
-language: sv
 """
 
 
