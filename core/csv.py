@@ -62,7 +62,7 @@ def list_to_dict_of_lists(values: ListType) -> dict[str, RowType]:
 
 
 def read_csv_file(file) -> TupleType:
-    """Read csv file and return tuple with values and headers"""
+    """Read csv file and return tuple with values (list[RowType]) and header (RowType)"""
     result = []
 
     # Use `skipinitialspace` to allow spaces before quote. `, "a,b"`
@@ -78,7 +78,7 @@ def read_csv_file(file) -> TupleType:
 
 
 def parse_headers(csv_list: ListType) -> TupleType:
-    """Separate csv list into values and headers"""
+    """Separate csv list into values (list[RowType]) and header (RowType)"""
     if len(csv_list) > 1 and len(csv_list[1]) == 1 and csv_list[1][0] == "-":
         return csv_list[2:], csv_list[0]
     return csv_list, []
