@@ -22,7 +22,8 @@ ctx.matches = r"""
 app: vscode
 """
 
-
+# Andreas extension is automatically updating this vscodeState.json but this is not public
+# so you need to manually update it yourself at the moment
 json_file = Path(tempfile.gettempdir()) / "vscodeState.json"
 
 workspaceFolders: list[Path] = []
@@ -36,22 +37,27 @@ def on_ready():
         state_json: dict = json.loads(f.read())
         state = State(**state_json)
         workspaceFolders = [Path(p) for p in state.workspaceFolders]
+        print("Workspace folders: ", workspaceFolders)
 
 
 @ctx.dynamic_list("user.code_symbol")
-def code_symbol_list() -> dict[str, str]:
+def code_symbol_list(phrase) -> dict[str, str]:
     global spoken_map
     t = time.perf_counter()
     types = get_types_from_workspaces()
     spoken_map = generate_spoken_forms(types)
     print("Generating code_symbol list: ", len(spoken_map))
     print(f"{int((time.perf_counter()-t)*1000)}ms")
+    # print(spoken_map)
     return spoken_map
 
 
-@ctx.capture("user.code_symbol", rule="{user.code_symbol}")
-def code_symbol(m) -> str:
-    return spoken_map[m.code_symbol]
+# override the global capture defined in code_generic_language.py with
+# @mod.capture(rule="{user.code_symbol}")
+# NOTE: this is not needed because it's the same definition
+# @ctx.capture("user.code_symbol", rule="{user.code_symbol}")
+# def code_symbol(m) -> str:
+#     return m.code_symbol
 
 
 def get_types_from_workspaces() -> set[str]:
