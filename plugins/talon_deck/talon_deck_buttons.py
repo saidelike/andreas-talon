@@ -19,18 +19,6 @@ ctx_sleep.matches = """
 mode: sleep
 """
 
-ctx_game = Context()
-ctx_game.matches = """
-mode: user.game
-and not mode: sleep
-"""
-
-ctx_game_voip_listening = Context()
-ctx_game_voip_listening.matches = """
-mode: user.game
-not tag: user.game_voip_muted
-"""
-
 ctx_eye_tracker = Context()
 ctx_eye_tracker.matches = """
 tag: user.eye_tracker
@@ -84,24 +72,6 @@ class SleepActions:
         return [
             *actions.next(),
             {"icon": "sleepMode", "action": "user.talon_wake()", "order": 0},
-        ]
-
-
-@ctx_game.action_class("user")
-class GameActions:
-    def talon_deck_get_buttons():
-        return [
-            *actions.next(),
-            {"icon": "gameMode", "action": "user.game_mode_disable()", "order": 0},
-        ]
-
-
-@ctx_game_voip_listening.action_class("user")
-class GameVoipListeningActions:
-    def talon_deck_get_buttons():
-        return [
-            *actions.next(),
-            {"icon": "listening", "action": "user.game_toggle_mute()", "order": 1},
         ]
 
 
