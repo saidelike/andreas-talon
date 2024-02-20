@@ -69,7 +69,10 @@ mod.list(
     "snap_position",
     "Predefined window positions for the current window. See `RelativePosition`.",
 )
+mod.list("snap_side", "Directions to move the current window")
+
 ctx.lists["user.snap_position"] = snap_positions.keys()
+ctx.lists["user.snap_side"] = list(snap_positions.keys())[:4]
 
 
 # Declare a capture "<user.prev_next>" (due to "prev_next" function definition below)

@@ -54,6 +54,36 @@ class Actions:
             height=rect.height,
         )
 
+    # move_window_to_screen_center() could possibly be merged into this
+    def move_window_side_to_screen_side(side: str):
+        """Move active windows to side position"""
+        window = ui.active_window()
+        rect = window.rect
+        screen = window.screen.visible_rect
+
+        if side == "left":
+            pos = (screen.x, rect.y, rect.width, rect.height)
+        elif side == "right":
+            pos = (
+                screen.x + screen.width - rect.width,
+                rect.y,
+                rect.width,
+                rect.height,
+            )
+        elif side == "top":
+            pos = (rect.x, screen.y, rect.width, rect.height)
+        elif side == "bottom":
+            pos = (
+                rect.x,
+                screen.y + screen.height - rect.height,
+                rect.width,
+                rect.height,
+            )
+        else:
+            raise Exception(f"Unknown side {side}")
+
+        actions.user.window_set_pos(window, *pos)
+
     def swap_active_window_position_with_application(app_name: str):
         """Swap active window position with application <app_name>"""
         app = actions.user.get_app(app_name)

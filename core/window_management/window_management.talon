@@ -49,6 +49,7 @@ snap {user.running_application}:
 
 move center:                user.move_window_to_screen_center()
 move here:                  user.move_window_side_to_cursor_position()
+move {user.snap_side}:      user.move_window_side_to_screen_side(snap_side)
 
 resize here:                user.resize_window_side_to_cursor_position()
 resize {user.resize_side} {user.resize_direction} [{user.resize_size}]:
