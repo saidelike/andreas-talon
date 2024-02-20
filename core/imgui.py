@@ -20,8 +20,18 @@ MAX_IMAGE_HEIGHT = 1 / 10
 
 mod = Module()
 
-mod.setting("gui_max_rows", type=int, default=5)
-mod.setting("gui_max_cols", type=int, default=50)
+mod.setting(
+    "gui_max_rows",
+    type=int,
+    default=5,
+    desc="the maximum number of rows before truncating",
+)
+mod.setting(
+    "gui_max_cols",
+    type=int,
+    default=50,
+    desc="the maximum number of columns before truncating",
+)
 
 
 class State:
@@ -476,6 +486,8 @@ class ImGUI:
         return open_inner
 
 
+# imgui is imported everywhere else
+# imgui.GUI is then used
 imgui = ImGUI(GUI)
 
 
