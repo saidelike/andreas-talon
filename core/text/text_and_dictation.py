@@ -282,6 +282,7 @@ ui.register("app_deactivate", lambda app: dictation_formatter.reset())
 ui.register("win_focus", lambda win: dictation_formatter.reset())
 
 
+# we define new actions that are "text and dictation" related
 @mod.action_class
 class Actions:
     def dictation_format_reset():

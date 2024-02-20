@@ -9,6 +9,7 @@ def get_log_level():
     return settings.get("user.log_level")
 
 
+# we define new actions that are "log" related
 @mod.action_class
 class Actions:
     def debug(message: str):

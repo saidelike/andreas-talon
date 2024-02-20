@@ -6,6 +6,7 @@ from talon.skia.imagefilter import ImageFilter
 mod = Module()
 
 
+# we define new actions that are "screen" related
 @mod.action_class
 class Actions:
     def screens_show_numbering():

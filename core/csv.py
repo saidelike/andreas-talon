@@ -11,6 +11,7 @@ DictType = dict[str, str]
 TupleType = Tuple[ListType, RowType]
 
 
+# we define new actions that are "csv" related
 @mod.action_class
 class Actions:
     def watch_csv_as_list(path: Path, callback: Callable[[ListType, RowType], None]):

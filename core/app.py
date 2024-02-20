@@ -4,15 +4,19 @@ mod = Module()
 ctx = Context()
 
 
+# "app" has built-in actions that we override here
 @ctx.action_class("app")
 class AppActions:
+    # Open a new window
     def window_open():
         actions.key("ctrl-n")
 
+    # Close the current window
     def window_close():
         actions.key("alt-f4")
 
 
+# we define new actions that are "app" related
 @mod.action_class
 class Actions:
     def stop_app():
@@ -38,6 +42,7 @@ os: windows
 """
 
 
+# "app" has built-in actions that we override here
 @ctx_win.action_class("app")
 class AppActionsWin:
     def window_hide():

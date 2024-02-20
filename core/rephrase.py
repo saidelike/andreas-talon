@@ -18,6 +18,7 @@ speech_system.register("pre:phrase", on_pre_phrase)
 speech_system.register("post:phrase", on_post_phrase)
 
 
+# we define new actions that are "rephrase" related
 @mod.action_class
 class Actions:
     def rephrase(phrase: Phrase, run_async: bool = False, delta_start: float = 0.0):
