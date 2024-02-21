@@ -148,6 +148,15 @@ class Actions:
         if url and text:
             actions.clip.set_text(f"[`{text}`]({url})")
 
+    # TODO: this doesn't work after we do a "git stage" due to the file disappearing from the source control bar
+    def vscode_git_diff_file(direction: str = "up"):
+        """open the next/previous file in the vscode source control view"""
+        title = actions.win.title()
+        if not title.endswith("focus:[Source Control]"):
+            actions.user.vscode("workbench.scm.focus")
+        actions.key(direction)
+        actions.key("space")
+
 
 def command_with_text(command: str, text: Optional[str] = None, submits: bool = False):
     actions.user.vscode(command)

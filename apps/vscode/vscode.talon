@@ -148,6 +148,9 @@ git stage:                  user.vscode("git.stage")
 git stage all:              user.vscode("git.stageAll")
 git unstage:                user.vscode("git.unstage")
 
+git diff next:              user.vscode_git_diff_file("down")
+git diff last:              user.vscode_git_diff_file("up")
+
 # Git commit
 open change:                user.vscode("git.openChange")
 next change:                user.vscode("workbench.action.compareEditor.nextChange")
