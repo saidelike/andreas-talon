@@ -5,6 +5,7 @@ mod = Module()
 mod.tag("code_comments")
 
 
+# we define new actions that are "code comments" related
 @mod.action_class
 class Actions:
     def insert_todo_comment_snippet(message: Optional[str] = None):
