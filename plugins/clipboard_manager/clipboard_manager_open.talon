@@ -13,5 +13,6 @@ clippy chuck <number_small> [and <number_small>]*:
 clippy split <number_small> [and <number_small>]*:
     user.clipboard_manager_split(number_small_list)
 
+# TODO: rename to "clippy join"?
 clippy copy <number_small> [and <number_small>]*:
     user.clipboard_manager_copy(number_small_list)

@@ -103,19 +103,24 @@ def gui(gui: imgui.GUI):
                 clicked_num = i + 1
 
 
+# "edit" has built-in actions that we override here
 @ctx_visible.action_class("edit")
 class VisibleEditActions:
+    # Paste clipboard at cursor
     def paste():
         actions.next()
         hide_if_not_sticky()
 
+    # Paste clipboard without style information
     def paste_match_style():
         actions.next()
         hide_if_not_sticky()
 
 
+# "edit" has built-in actions that we override here
 @ctx.action_class("edit")
 class EditActions:
+    # Get currently selected text
     def selected_text() -> str:
         try:
             actions.user.clipboard_manager_stop_updating()
@@ -132,6 +137,7 @@ class UserActions:
         actions.user.clipboard_manager_resume_updating()
 
 
+# we define new actions that are "clipboard manager" related
 @mod.action_class
 class Actions:
     def clipboard_manager_toggle():
