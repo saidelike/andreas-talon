@@ -24,7 +24,7 @@ def code_symbol(m) -> str:
 class Actions:
     # ----- Class statement -----
     def code_class_wrapper(name: str, modifiers: Union[list[str], str]):
-        """Declare class <name>"""
+        """Declare class <name> wrapper"""
         format = actions.user.code_get_class_format()
         name = actions.user.format_text(name, format)
         actions.user.code_class(name, modifiers or [])
@@ -43,12 +43,12 @@ class Actions:
 
     # ----- Function statement -----
     def code_function_wrapper(name: str, modifiers: Union[list[str], str]):
-        """Declare function <name>"""
+        """Declare function <name> wrapper"""
         name = parse_function_name(name)
         actions.user.code_function(name, modifiers or [])
 
     def code_method_wrapper(name: str, modifiers: Union[list[str], str]):
-        """Declare method <name>"""
+        """Declare method <name> wrapper"""
         name = parse_function_name(name)
         actions.user.code_method(name, modifiers or [])
 
@@ -104,7 +104,7 @@ class Actions:
         """Get class name"""
 
     def code_get_open_tag_name() -> Optional[str]:
-        """Get class name"""
+        """Get open XML tag name"""
 
 
 def parse_function_name(name: str) -> str:
