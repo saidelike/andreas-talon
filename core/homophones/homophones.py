@@ -106,8 +106,9 @@ def homophones_update(values: list[list[str]], headers: list[str]):
 
 
 def on_ready():
+    andreas_settings = actions.user.andreas_settings()
     actions.user.watch_csv_as_list(
-        Path(__file__).parent / "homophones_en.csv",
+        Path(andreas_settings) / "homophones_en.csv",
         homophones_update,
     )
 
