@@ -257,6 +257,14 @@ class UserActions:
     def code_get_open_tag_name() -> Optional[str]:
         return actions.user.vscode_get("andreas.getOpenTagName")
 
+    # ----- Delimiters -----
+    # vscode automatically appends the right delimiter if the selection is a word
+    def delimiters_pair_wrap_selection_with(left: str, right: str):
+        selected = actions.edit.selected_text()
+        if " " not in selected:
+            right = ""
+        actions.user.delimiters_pair_insert(left, right, selected)
+
 
 # we define new actions that are "vscode" related
 @mod.action_class
