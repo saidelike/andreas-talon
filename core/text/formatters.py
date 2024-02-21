@@ -238,6 +238,7 @@ formatters_code = {
     "slasher": "SLASH_SEPARATED",
     # "dunder": "DOUBLE_UNDERSCORE",
     # "packed": "DOUBLE_COLON_SEPARATED",
+    "list": "COMMA_SEPARATED",
 }
 
 # Prose formatters that are also used for reformating
@@ -273,7 +274,8 @@ ctx.lists["user.formatter"] = {
     **formatters_prose,
     # These formatters are only for reformatting and neither code or prose
     "cap": "CAPITALIZE_FIRST_WORD",
-    "list": "COMMA_SEPARATED",
+    # NOTE: disabled because added to formatters_code
+    # "list": "COMMA_SEPARATED",
     "un": "REMOVE_FORMATTING",
 }
 

@@ -5,7 +5,10 @@
 {user.symbol}:              key(symbol)
 
 # Digits [0-9]
-{user.digit}:               key(digit)
+# NOTE: commenting so "list one two three" outputs "one, two, three"
+# and "list number one number two number three" outputs "1, 2, 3"
+# and it also matches disabling "<user.number_dd>" in text_and_dictation.py
+# {user.digit}:               key(digit)
 
 # Special keys.
 enter | okay:               key(enter)
