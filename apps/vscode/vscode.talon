@@ -142,12 +142,15 @@ git (repo | repository):    user.git_open_url("Repo")
 git issues:                 user.git_open_url("Issues")
 git new issue:              user.git_open_url("NewIssue")
 git pull requests:          user.git_open_url("PullRequests")
+# "git.openAllChanges" has been added in 1.86 https://code.visualstudio.com/updates/v1_86#_review-multiple-files-in-diff-editor
+# TODO: this command doesn't work anymore since vscode 1.86.2 (but it still works with the button)
 git diff files:             user.vscode("git.openAllChanges")
 git open:                   user.vscode("git.openFile")
 git stage:                  user.vscode("git.stage")
 git stage all:              user.vscode("git.stageAll")
 git unstage:                user.vscode("git.unstage")
 
+# commands to work until https://github.com/microsoft/vscode/issues/204340 is fixed
 git diff next:              user.vscode_git_diff_file("down")
 git diff last:              user.vscode_git_diff_file("up")
 
