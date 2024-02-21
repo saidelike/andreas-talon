@@ -33,6 +33,12 @@ class Actions:
         file = Path(andreas_settings) / "vocabulary_en.talon-list"
         actions.user.edit_text_file(file.absolute())
 
+    def edit_homophones():
+        """Edit homophones csv"""
+        andreas_settings = actions.user.andreas_settings()
+        file = Path(andreas_settings) / "homophones_en.csv"
+        actions.user.edit_text_file(file.absolute())
+
 
 # Words to replace is used by `actions.dictate.replace_words` to rewrite words
 # Talon recognized. Entries don't change the priority with which Talon
