@@ -210,7 +210,9 @@ def number_small(m) -> int:
 
 
 # Declare a capture "<user.number_float_string>" (due to "number_float_string" function definition below)
-@mod.capture(rule="<user.number_string> point <user.number_string>")
+# NOTE: it feels more natural for me to use "dot" than "point"
+# @mod.capture(rule="<user.number_string> point <user.number_string>")
+@mod.capture(rule="<user.number_string> (point|dot) <user.number_string>")
 def number_float_string(m) -> str:
     """Parses a float number phrase, returning that number as a string."""
     return f"{m.number_string_1}.{m.number_string_2}"
