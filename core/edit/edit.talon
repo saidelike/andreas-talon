@@ -64,6 +64,7 @@ disk:                       edit.save()
 
 # ----- Text insertions -----
 make to do:                 "TODO: "
+make note:                  "NOTE: "
 bullet:                     "* "
 task:                       "- [ ] "
 spam:                       ", "
