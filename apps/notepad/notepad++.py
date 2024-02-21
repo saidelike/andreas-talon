@@ -27,10 +27,11 @@ class win_actions:
         return ""
 
 
-# @ctx.action_class("code")
-# class CodeActions:
-#     def toggle_comment():
-#         actions.key("ctrl-q")
+@ctx.action_class("code")
+class CodeActions:
+    # it will only work with notepad++'s supported languages (eg it does not support Talon)
+    def toggle_comment():
+        actions.key("ctrl-q")
 
 
 # these are Talon-defined "app" actions (only grouped for clarity) that we override
