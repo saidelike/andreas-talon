@@ -3,7 +3,9 @@ list: user.symbol
 
 # these are all the symbols we can say with just one word
 # and they are useful in cursorless for target decorated marks
-void:              space
+# void:              space
+# trying to avoid false positives between "void" and "pit" (p)
+ace:              space
 dot:               .
 # disable for now to avoid false positive with "void"
 # point:             .

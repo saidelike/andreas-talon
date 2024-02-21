@@ -12,7 +12,9 @@ language: en
 mod.list("phrase_ender", "List of commands that can be used to end a phrase")
 ctx.lists["user.phrase_ender"] = {
     "over": "",
-    "void": " ",
+    # "void": " ",
+    # trying to avoid false positives between "void" and "pit" (p)
+    "ace": " ",
     "question": "?",
     "bang": "!",
     "slap": "\n",

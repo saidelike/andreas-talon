@@ -18,7 +18,9 @@ matching_pairs = {
 
 matching_pairs_all = {
     **matching_pairs,
-    "void":     [" ", " "],
+    # "void":     [" ", " "],
+    # trying to avoid false positives between "void" and "pit" (p)
+    "ace":     [" ", " "],
 }
 
 # fmt: on
