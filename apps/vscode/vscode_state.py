@@ -38,7 +38,7 @@ def on_watch(f):
 
 # Declare a list "{user.code_symbol}" that is generated dynamically when accessed in a command
 @ctx.dynamic_list("user.code_symbol")
-def code_symbol() -> dict[str, str]:
+def code_symbol(phrase) -> dict[str, str]:
     global spoken_map
     t = time.perf_counter()
     symbols = get_symbols_from_workspaces()
