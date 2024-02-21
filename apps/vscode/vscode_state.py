@@ -40,6 +40,7 @@ def on_ready():
         print("Workspace folders: ", workspaceFolders)
 
 
+# Declare a list "{user.code_symbol}" that is generated dynamically when accessed in a command
 @ctx.dynamic_list("user.code_symbol")
 def code_symbol_list(phrase) -> dict[str, str]:
     global spoken_map
