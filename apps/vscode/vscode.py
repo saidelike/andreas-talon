@@ -108,10 +108,6 @@ class EditActions:
     def delete_line():
         actions.user.vscode("editor.action.deleteLines")
 
-    # Extend selection to include line <n>
-    def extend_line(n: int):
-        actions.user.vscode("andreas.selectTo", n)
-
     # Move cursor to line <n>
     def jump_line(n: int):
         actions.user.vscode("andreas.goToLine", n)
