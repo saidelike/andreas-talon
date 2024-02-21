@@ -4,9 +4,7 @@ ctx = Context()
 mod = Module()
 
 # we define what it is to be a "notepad" app
-mod.apps.notepad = """
-os: windows
-and app.name: Notepad
+mod.apps.notepad = r"""
 os: windows
 and app.exe: notepad.exe
 """

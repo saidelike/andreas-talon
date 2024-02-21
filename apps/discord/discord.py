@@ -7,9 +7,7 @@ ctx = Context()
 # we define what it is to be a "discord" app
 mod.apps.discord = r"""
 os: windows
-and app.name: Discord
-os: windows
-and app.exe: Discord.exe
+and app.exe: discord.exe
 """
 
 # this context is only active when the above "discord" app is enabled

@@ -4,11 +4,9 @@ ctx = Context()
 mod = Module()
 
 # we define what it is to be a "windows_terminal" app
-mod.apps.windows_terminal = """
+mod.apps.windows_terminal = r"""
 os: windows
-and app.name: WindowsTerminal.exe
-os: windows
-and app.exe: WindowsTerminal.exe
+and app.exe: windowsterminal.exe
 """
 
 # this context is only active when the above "windows_terminal" app is enabled

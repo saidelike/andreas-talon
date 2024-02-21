@@ -1,10 +1,10 @@
 # this file is only active when the Talon-defined "windows_terminal" tag is enabled
 app: windows_terminal
 -
-# we want to be able to browse tabs, find text, and this is a terminal after all
+# this is a terminal after all and we want to be able to browse tabs, find text
+tag(): terminal
 tag(): user.tabs
 tag(): user.find
-tag(): terminal
 
 split cross:                key(alt-shift-d)
 split right:                key(alt-shift-+)

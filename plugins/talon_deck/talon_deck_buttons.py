@@ -5,32 +5,32 @@ mod = Module()
 ctx = Context()
 
 ctx_command = Context()
-ctx_command.matches = """
+ctx_command.matches = r"""
 mode: command
 """
 
 ctx_dictation = Context()
-ctx_dictation.matches = """
+ctx_dictation.matches = r"""
 mode: dictation
 """
 
 ctx_sleep = Context()
-ctx_sleep.matches = """
+ctx_sleep.matches = r"""
 mode: sleep
 """
 
 ctx_eye_tracker = Context()
-ctx_eye_tracker.matches = """
+ctx_eye_tracker.matches = r"""
 tag: user.eye_tracker
 """
 
 ctx_eye_tracker_frozen = Context()
-ctx_eye_tracker_frozen.matches = """
+ctx_eye_tracker_frozen.matches = r"""
 tag: user.eye_tracker_frozen
 """
 
 ctx_vscode = Context()
-ctx_vscode.matches = """
+ctx_vscode.matches = r"""
 mode: command
 mode: dictation
 app: vscode

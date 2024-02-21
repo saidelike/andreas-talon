@@ -4,15 +4,13 @@ ctx = Context()
 mod = Module()
 
 # we define what it is to be a "chrome" app
-mod.apps.chrome = """
-os: windows
-and app.name: Google Chrome
+mod.apps.chrome = r"""
 os: windows
 and app.exe: chrome.exe
 """
 
 # this context is only active when the above "chrome" app is enabled
-ctx.matches = """
+ctx.matches = r"""
 app: chrome
 """
 

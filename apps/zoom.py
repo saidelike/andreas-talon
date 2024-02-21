@@ -4,11 +4,9 @@ ctx = Context()
 mod = Module()
 
 # we define what it is to be a "zoom" app, but it's already the case by default
-mod.apps.zoom = """
+mod.apps.zoom = r"""
 os: windows
-and app.name: Zoom Meetings
-os: windows
-and app.exe: Zoom.exe
+and app.exe: zoom.exe
 """
 
 # this context is only active when the above "zoom" app is enabled

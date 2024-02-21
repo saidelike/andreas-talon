@@ -4,9 +4,7 @@ from talon import Context, Module, actions
 mod = Module()
 
 # we define what it is to be a "windows_explorer" app
-mod.apps.windows_explorer = """
-os: windows
-and app.name: Windows Explorer
+mod.apps.windows_explorer = r"""
 os: windows
 and app.exe: explorer.exe
 """
@@ -15,14 +13,14 @@ and app.exe: explorer.exe
 # many commands should work in most save/open dialog.
 # note the "show options" stuff won"t work unless work
 # unless the path is displayed in the title, which is rare for those
-mod.apps.windows_file_browser = """
+mod.apps.windows_file_browser = r"""
 os: windows
 title: /(Save|Open|Browse|Select|Install from|File Upload)/
 """
 
 # this context is only active when one of the above apps is enabled
 ctx = Context()
-ctx.matches = """
+ctx.matches = r"""
 app: windows_explorer
 app: windows_file_browser
 """
@@ -82,7 +80,7 @@ class UserActions:
     def file_manager_go(path: str):
         actions.user.file_manager_focus_address()
         actions.insert(path)
-        actions.sleep("100ms")
+        actions.sleep("300ms")
         actions.key("enter")
 
     # ----- Create folders / files -----

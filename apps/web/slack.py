@@ -8,13 +8,13 @@ mod = Module()
 
 # we define what it is to be a "slack" app
 # is the browser.host populated automatically by Talon based on the browser.address() action?
-mod.apps.slack = """
+mod.apps.slack = r"""
 tag: browser
 browser.host: app.slack.com
 """
 
 # this context is only active when the above "slack" app is enabled
-ctx.matches = """
+ctx.matches = r"""
 app: slack
 """
 

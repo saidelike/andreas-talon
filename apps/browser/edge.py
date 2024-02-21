@@ -4,15 +4,13 @@ ctx = Context()
 mod = Module()
 
 # we define what it is to be a "edge" app
-mod.apps.edge = """
-os: windows
-and app.name: Microsoft Edge
+mod.apps.edge = r"""
 os: windows
 and app.exe: msedge.exe
 """
 
 # this context is only active when the above "edge" app is enabled
-ctx.matches = """
+ctx.matches = r"""
 app: edge
 """
 

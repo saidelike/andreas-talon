@@ -9,17 +9,14 @@ app: windows_terminal
 and win.title: /\w+@[\w-]+: /i
 """
 # This is when opening "wsl" standalone
-mod.apps.wsl = """
-os: windows
-and app.name: Microsoft Windows Subsystem for Linux Launcher
-
+mod.apps.wsl = r"""
 os: windows
 and app.exe: wsl.exe
 """
 
 ctx = Context()
 # this context is only active when the above "wsl" app is enabled
-ctx.matches = """
+ctx.matches = r"""
 app: wsl
 """
 

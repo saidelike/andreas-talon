@@ -5,9 +5,7 @@ mod = Module()
 ctx = Context()
 
 # we define what it is to be a "firefox" app
-mod.apps.firefox = """
-os: windows
-and app.name: Firefox
+mod.apps.firefox = r"""
 os: windows
 and app.exe: firefox.exe
 """

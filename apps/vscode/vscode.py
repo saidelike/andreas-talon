@@ -9,7 +9,7 @@ mod.list("vscode_sessions", "Known vscode sessions/workspaces")
 # we define what it is to be a "vscode" app
 mod.apps.vscode = r"""
 os: windows
-and app.name: Visual Studio Code
+and app.exe: code.exe
 os: linux
 and app.name: Code
 """
@@ -68,9 +68,13 @@ class EditActions:
 
     # Get currently selected text
     def selected_text() -> str:
-        selectedTexts = actions.user.vscode_get("andreas.getSelectedText")
-        if selectedTexts is not None:
-            return "\n".join(selectedTexts)
+        try:
+            selectedTexts = actions.user.vscode_get("andreas.getSelectedText")
+            if selectedTexts is not None:
+                return "\n".join(selectedTexts)
+        except Exception as ex:
+            print(f"EXCEPTION: {ex}")
+
         return actions.next()
 
     # Clear current selection

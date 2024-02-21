@@ -5,11 +5,9 @@ mod = Module()
 ctx = Context()
 
 # we define what it is to be a "spotify" app, but it's already the case by default
-mod.apps.spotify = """
+mod.apps.spotify = r"""
 os: windows
-and app.name: Spotify.exe
-os: windows
-and app.exe: Spotify.exe
+and app.exe: spotify.exe
 """
 
 # this context is only active when the above "spotify" app is enabled

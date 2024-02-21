@@ -9,14 +9,12 @@ app: windows_terminal
 and win.title: /MINGW64:/i
 """
 # This is when opening "Git Bash" standalone
-mod.apps.git_bash = """
-os: windows
-and app.name: mintty.exe
+mod.apps.git_bash = r"""
 os: windows
 and app.exe: mintty.exe
 """
 # TODO: what is this?
-mod.apps.git_bash = """
+mod.apps.git_bash = r"""
 os: windows
 app: vscode
 win.file_ext: .bashbook
