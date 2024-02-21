@@ -19,6 +19,15 @@ app: slack
 """
 
 
+# "code" has built-in actions that we override here
+@ctx.action_class("code")
+class CodeActions:
+    # Return the active programming language
+    def language():
+        # hack in order to enable markdown commands in slack chat
+        return "markdown"
+
+
 # "edit" has built-in actions that we override here
 @ctx.action_class("edit")
 class EditActions:
