@@ -32,7 +32,7 @@ rango explicit:
 rango direct:
     user.rango_enable_direct_clicking()
 
-copy page address:
+copy address:
     user.rango_command_without_target("copyLocationProperty", "href")
 
 # Miscellaneous
