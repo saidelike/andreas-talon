@@ -9,6 +9,10 @@ os: windows
 and app.exe: teams.exe
 """
 mod.apps.teams = r"""
+os: windows
+and app.exe: ms-teams.exe
+"""
+mod.apps.teams = r"""
 tag: browser
 browser.host: teams.microsoft.com
 """
@@ -18,7 +22,8 @@ ctx.matches = r"""
 app: teams
 """
 
-ctx.tags = ["user.voip"]
+# we disable paste with insertion because otherwise when we says "spam", it inserts "," instead of ", " (misses the space)
+ctx.tags = ["user.voip", "user.insert_paste_disabled"]
 
 
 @ctx.action_class("user")
