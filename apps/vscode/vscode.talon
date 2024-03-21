@@ -246,10 +246,10 @@ pop sesh {user.vscode_sessions}$:
     user.vscode_find_recent(vscode_sessions)
     sleep(150ms)
     key(enter)
-pop sesh [<user.text>]$:
-    user.vscode_find_recent(text or "")
-    sleep(150ms)
-    key(enter)
+# pop sesh [<user.text>]$:
+#     user.vscode_find_recent(text or "")
+#     sleep(150ms)
+#     key(enter)
 
 # Find a symbol
 scout symbol [<user.text>]$:
