@@ -19,6 +19,7 @@ ctx.lists["user.phrase_ender"] = {
     "bang": "!",
     "slap": "\n",
     "stack": ":",
+    "spam": ", ",
 }
 
 
