@@ -11,11 +11,10 @@ search for token:
     edit.select_word()
     user.browser_search_selected()
 
-# TODO: change all of these with "scout dictionary ..."
-define word <user.word>$:
+scout dictionary word <user.word>$:
     user.browser_define(word)
-define phrase <user.text>$:
+scout dictionary phrase <user.text>$:
     user.browser_define(text)
-define (this | dis):
+scout dictionary (this | dis):
     user.set_selection_on_word_if_none()
     user.browser_define_selected()
