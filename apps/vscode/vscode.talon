@@ -27,6 +27,7 @@ open preview:               user.vscode("markdown.showPreview")
 open preview split:         user.vscode("markdown.showPreviewToSide")
 
 # Problems
+scout problem:              user.vscode("workbench.actions.view.problems")
 problem next:               user.vscode("editor.action.marker.nextInFiles")
 problem last:               user.vscode("editor.action.marker.prevInFiles")
 problem fix:                user.vscode("problems.action.showQuickFixes")
