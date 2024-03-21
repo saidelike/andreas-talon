@@ -7,7 +7,8 @@ go bottom:                  edit.file_end()
 
 head:                       edit.line_start()
 tail:                       edit.line_end()
-center:                     user.line_middle()
+# NOTE: I don't use it and sometimes it conflict with "comma"
+# center:                     user.line_middle()
 
 up:                         edit.up()
 down:                       edit.down()
@@ -24,7 +25,7 @@ indent:                     edit.indent_more()
 dedent:                     edit.indent_less()
 
 # ----- Selection -----
-take all:                   edit.select_all()
+# take all:                   edit.select_all()
 take none:                  edit.select_none()
 
 extend top:                 edit.extend_file_start()
