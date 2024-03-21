@@ -58,3 +58,5 @@ git log:                    user.git_log()
 git remote:                 user.git_remote()
 
 git cherry pick:            user.git_cherry_pick()
+
+make {user.git_conventional_commits}: "{git_conventional_commits}: "

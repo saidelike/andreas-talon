@@ -14,6 +14,8 @@ ctx.lists["user.git_branch"] = {
     "develop": "develop",
 }
 
+mod.list("git_conventional_commits", desc="Git conventional commits")
+
 
 # we define new actions that are "git" related
 # i.e. in vscode or the terminal
@@ -115,7 +117,7 @@ class Action:
     def git_log():
         """Show git log"""
         actions.insert(
-            "git log --graph --color=always --format='%C(auto)%h%d %s %C(green)(%cr) %C(bold blue)<%an>%Creset'\n"
+            'git log --graph --color=always --format="%C(auto)%h%d %s %C(green)(%cr) %C(bold blue)<%an>%Creset"\n'
         )
 
     def git_remote():

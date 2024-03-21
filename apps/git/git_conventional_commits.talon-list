@@ -1,0 +1,17 @@
+list: user.git_conventional_commits
+-
+
+# https://www.conventionalcommits.org/en/v1.0.0/#summary
+build: build
+feature: feat
+feet: feat
+fix: fix
+documentation: docs
+docks: docs
+style: style
+refactor: refactor
+performance: perf
+test: test
+chore: chore
+revert: revert
+breaking: BREAKING CHANGE
