@@ -12,5 +12,6 @@ and app.exe: conhost.exe
 
 os: windows
 and app.exe: windowsterminal.exe
-and title: Talon - REPL
+
+title: Talon - REPL
 """
