@@ -3,6 +3,8 @@ phrase: block comment
 insertionScope: statement
 
 $0.insertionFormatter: SENTENCE
+$0.wrapperPhrase: block comment
+$0.wrapperScope: token
 ---
 
 language: c | javascript | java
@@ -18,4 +20,9 @@ language: python
 language: html
 -
 <!-- $0 -->
+---
+
+language: lua
+-
+--[[ $0 ]]--
 ---
