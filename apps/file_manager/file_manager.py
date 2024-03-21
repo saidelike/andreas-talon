@@ -80,6 +80,9 @@ class Actions:
     def file_manager_go(path: str):
         """File manager go to path"""
 
+    def file_manager_go_step(path: str):
+        """File manager start going to path"""
+
     def file_manager_copy_address():
         """File manager copy address"""
 

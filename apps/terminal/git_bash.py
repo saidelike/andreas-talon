@@ -8,6 +8,11 @@ mod.apps.git_bash = """
 app: windows_terminal
 and win.title: /MINGW64:/i
 """
+# This is when opening "Git Bash" from cmd
+mod.apps.git_bash = """
+app: console window host
+and win.title: /MINGW64:/i
+"""
 # This is when opening "Git Bash" standalone
 mod.apps.git_bash = r"""
 os: windows

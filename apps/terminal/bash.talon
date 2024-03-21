@@ -7,16 +7,7 @@ tag(): terminal
 flag:                       " -"
 flag <user.letters>:        " -{letters} "
 
-dir:                        "cd "
-dir <user.text>$:           "cd {text}"
-dir <user.letters>$:        "cd {letters}"
-dir <user.text> tab$:       "cd {text}\t"
-dir <user.letters> tab$:    "cd {letters}\t"
-
 # TODO: merge the below commands with the other terminals
-list:                       "ls\n"
-list all:                   "ls -a\n"
-list long:                  "ls -lah\n"
 list long pipe:             "ls -lah | "
 
 tree files:                 "tree\n"
@@ -43,7 +34,6 @@ echo:                       "echo "
 echo <user.text>$:          "echo {text}"
 
 grep:                       "grep "
-make dir:                   "mkdir "
 move:                       "mv "
 # remove:                        "rm "
 copy:                       "cp "

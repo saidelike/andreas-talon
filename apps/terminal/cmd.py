@@ -10,7 +10,10 @@ os: windows
 and win.title: Command Prompt
 
 os: windows
-and win.title: /C:\\Windows\\System32\\cmd.exe/
+and win.title: /C:\\Windows\\System32\\cmd.exe/i
+
+os: windows
+and win.title: /x64 Native Tools Command Prompt for VS 2019/i
 """
 
 # this context is only active when the above "cmd" app is enabled
@@ -41,3 +44,8 @@ class UserActions:
     # inherited from "file_manager.py"
     def file_manager_new_folder(name: str = None):
         actions.insert(f"mkdir {name or ''}")
+
+    # ----- List files -----
+    # inherited from "terminal.py"
+    def list_directory(path: str):
+        actions.insert(f"dir {path}\n")

@@ -2,6 +2,8 @@
 app: cmd
 -
 tag(): terminal
+# this is using groupy
+tag(): user.tabs
 
 talon repl:                 insert('"C:\\Program Files\\Talon\\python.exe" "C:\\Program Files\\Talon\\repl.py"')
 git bash:                   insert('"C:\\Program Files\\Git\\bin\\bash.exe" -li')
@@ -10,4 +12,4 @@ git bash:                   insert('"C:\\Program Files\\Git\\bin\\bash.exe" -li'
 tree files:                 "tree /f\n"
 tree folders:               "tree\n"
 
-list:                       "dir\n"
+i p conf:                   "ipconfig\n"
