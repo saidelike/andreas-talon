@@ -70,6 +70,8 @@ directory, dir
 distribution, dist
 document, doc
 documents, docs
+documentation, doc
+documentations, docs
 double, dbl
 dupe, dup
 duplicate, dup
@@ -87,6 +89,7 @@ execute, exec
 expression, exp
 extend, ext
 extension, ext
+feature, feat
 file system, fs
 for example, eg
 for instance, eg
@@ -152,6 +155,7 @@ original, orig
 package, pkg
 parameter, param
 parameters, params
+performance, perf
 pico second, ps
 pixel, px
 point, pt
@@ -225,3 +229,4 @@ web, www
 what do you think, wdyt
 what the fuck, wtf
 window, win
+work in progress, wip
