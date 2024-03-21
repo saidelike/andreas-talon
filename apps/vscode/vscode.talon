@@ -177,7 +177,7 @@ unfold all:                 user.vscode("editor.unfoldAll")
 fold comments:              user.vscode("editor.foldAllBlockComments")
 
 # Navigation
-go line <number>:           edit.jump_line(number - 1)
+go row <number>:            edit.jump_line(number - 1)
 pop back:                   user.vscode("workbench.action.openPreviousRecentlyUsedEditor")
 pop forward:                user.vscode("workbench.action.openNextRecentlyUsedEditor")
 # focus editor:               user.vscode("workbench.action.focusActiveEditorGroup")
