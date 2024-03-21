@@ -9,6 +9,7 @@ tag(): user.extensions
 go parent:                  user.file_manager_go_parent()
 go home:                    user.file_manager_go_home()
 go <user.path_any>:         user.file_manager_go(path_any)
+# go path <user.path_any>:    user.file_manager_go(path_any)
 go address:                 user.file_manager_focus_address()
 copy address:               user.file_manager_copy_address()
 
