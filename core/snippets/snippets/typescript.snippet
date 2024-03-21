@@ -11,3 +11,51 @@ interface $1 {
     $0
 }
 ---
+
+name: promise
+phrase: promise 
+insertionScope: type
+
+$0.wrapperPhrase: promise
+-
+Promise<$0>
+---
+
+## https://stackoverflow.com/questions/2319019/using-regex-to-remove-comments-from-source-files
+name: promiseObject
+phrase: promise object
+insertionScope: statement
+
+$0.wrapperPhrase: promise object
+-
+new Promise((resolve, reject) =>
+      resolve($0)
+      )
+---
+
+## https://medium.com/typescript-center/mastering-async-iterations-using-async-await-with-array-map-in-typescript-4f23097b137c
+name: promiseAll
+phrase: promise all
+insertionScope: statement
+
+$0.wrapperPhrase: promise all
+-
+await Promise.all($0)
+
+---
+
+name: await
+insertionScope: statement
+
+$0.wrapperPhrase: await
+-
+await $0
+
+---
+
+name: async
+insertionScope: statement
+
+$0.wrapperPhrase: async
+-
+async $0

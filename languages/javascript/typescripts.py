@@ -25,6 +25,7 @@ types = {
     "unknown"   : "unknown",
     "void"      : "void",
     "funk"      : "() => void",
+    "promise"   : "Promise",
 }
 
 ctx.lists["user.code_data_type"] = {
@@ -35,6 +36,11 @@ ctx.lists["user.code_function_modifier"] = {
     "public",
     "private",
     "protected",
+}
+ctx.lists["user.code_variable_modifier"] = {
+    "const",
+    "private",
+    # "let",
 }
 ctx.lists["user.code_insert"] = {
     **javascript_inserts,
