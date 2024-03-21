@@ -202,8 +202,9 @@ cursor (breed | all):       user.vscode("editor.action.selectHighlights")
 cursor skip:                user.vscode("editor.action.moveSelectionToNextFindMatch")
 
 # Debug and run
-build program:              user.vscode("workbench.action.tasks.build")
-run program:                user.vscode("workbench.action.debug.run")
+build program:              user.vscode_build_program()
+run program:                user.vscode_run_program()
+debug program:              user.vscode_debug_program()
 debug start:                user.vscode("workbench.action.debug.start")
 breakpoint:                 user.vscode("editor.debug.action.toggleBreakpoint")
 continue:                   user.vscode("workbench.action.debug.continue")

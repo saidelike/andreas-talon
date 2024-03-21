@@ -353,6 +353,26 @@ class Actions:
         actions.key(direction)
         actions.key("space")
 
+    def vscode_build_program():
+        """Build the program"""
+        actions.user.vscode("workbench.action.tasks.build")
+
+    def vscode_run_program():
+        """Run and debug the program"""
+        actions.user.vscode("workbench.action.debug.run")
+
+    def vscode_debug_program(sleep_time: int = 600):
+        """Debug the program"""
+
+    def vscode_run_terminal_command(cmd: str):
+        """Run terminal command"""
+        actions.edit.save()
+        actions.user.vscode("workbench.action.terminal.toggleTerminal")
+        actions.sleep("200ms")
+        actions.insert(cmd)
+        actions.sleep("100ms")
+        actions.key("enter")
+
 
 def empty_selection():
     if actions.edit.selected_text():
