@@ -169,6 +169,9 @@ def parse_file(file_path: str) -> list[SnippetDocument]:
     with open(file_path, encoding="utf-8") as f:
         content = f.read()
     file_name = Path(file_path).name
+    # remove comments which are lines starting with 2 hash character 
+    # NOTE: we used 2 to avoid problems with commentLine.snippet
+    content = re.sub(re.compile("##.*?\n" ) ,"" ,content)
     return parse_file_content(file_name, content)
 
 
