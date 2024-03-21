@@ -31,7 +31,8 @@ scout problem:              user.vscode("workbench.actions.view.problems")
 problem next:               user.vscode("editor.action.marker.nextInFiles")
 problem last:               user.vscode("editor.action.marker.prevInFiles")
 problem fix:                user.vscode("problems.action.showQuickFixes")
-quick fix:                  user.vscode("editor.action.quickFix")
+# quick fix:                        user.vscode("editor.action.quickFix")
+fix:                        user.vscode("editor.action.quickFix")
 
 # Imports
 imports organize:           user.vscode("editor.action.organizeImports")
