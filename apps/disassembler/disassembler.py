@@ -20,3 +20,18 @@ class Actions:
 
     def disassembler_decompile():
         """Decompile the current function"""
+
+    def disassembler_rename():
+        """Rename the current item (function, variable)"""
+
+    def disassembler_rename_function():
+        """Rename the current function"""
+
+    def disassembler_rename_variable():
+        """Rename the current variable"""
+
+    def disassembler_change_type():
+        """Change the current item type (function, variable)"""
+
+    def disassembler_change_function_type():
+        """Change the current function type"""
