@@ -6,6 +6,7 @@ tag(): terminal
 tag(): user.tabs
 tag(): user.find
 
+# TODO: use the user.split tag and commands similar to vscode?
 split cross:                key(alt-shift-d)
 split right:                key(alt-shift-+)
 split down:                 key(alt-shift--)

@@ -265,6 +265,60 @@ class UserActions:
             right = ""
         actions.user.delimiters_pair_insert(left, right, selected)
 
+    # ----- Split -----
+    def split_move_up():
+        actions.user.vscode("workbench.action.moveEditorToAboveGroup")
+
+    def split_move_down():
+        actions.user.vscode("workbench.action.moveEditorToBelowGroup")
+
+    def split_move_left():
+        actions.user.vscode("workbench.action.moveEditorToLeftGroup")
+
+    def split_move_right():
+        actions.user.vscode("workbench.action.moveEditorToRightGroup")
+
+    def split_focus_up():
+        actions.user.vscode("workbench.action.focusAboveGroup")
+
+    def split_focus_down():
+        actions.user.vscode("workbench.action.focusBelowGroup")
+
+    def split_focus_left():
+        actions.user.vscode("workbench.action.focusLeftGroup")
+
+    def split_focus_right():
+        actions.user.vscode("workbench.action.focusRightGroup")
+
+    def split_focus_next():
+        actions.user.vscode("workbench.action.focusNextGroup")
+
+    # def split_focus_last():
+
+    def split_shrink_width():
+        actions.user.vscode("workbench.action.decreaseViewWidth")
+
+    def split_shrink_height():
+        actions.user.vscode("workbench.action.decreaseViewHeight")
+
+    def split_expand_width():
+        actions.user.vscode("workbench.action.increaseViewWidth")
+
+    def split_expand_height():
+        actions.user.vscode("workbench.action.increaseViewHeight")
+
+    def split_layout_toggle():
+        actions.user.vscode("workbench.action.toggleEditorGroupLayout")
+
+    def split_layout_join_two_groups():
+        actions.user.vscode("workbench.action.joinTwoGroups")
+
+    def split_layout_clear():
+        actions.user.vscode("workbench.action.editorLayoutSingle")
+
+    def split_layout_toggle_maximize():
+        actions.user.vscode("workbench.action.toggleMaximizeEditorGroup")
+
 
 # we define new actions that are "vscode" related
 @mod.action_class
@@ -368,7 +422,7 @@ class Actions:
         """Run terminal command"""
         actions.edit.save()
         actions.user.vscode("workbench.action.terminal.toggleTerminal")
-        actions.sleep("200ms")
+        actions.sleep("600ms")
         actions.insert(cmd)
         actions.sleep("100ms")
         actions.key("enter")

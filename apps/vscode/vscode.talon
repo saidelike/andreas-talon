@@ -11,6 +11,7 @@ tag(): user.find
 tag(): user.extensions
 tag(): user.code_comments
 tag(): user.git
+tag(): user.split
 
 settings():
     user.scroll_speed = 0.9
@@ -43,28 +44,7 @@ imports fix:
     user.vscode("editor.action.organizeImports")
 
 # Split
-split up:                   user.vscode("workbench.action.moveEditorToAboveGroup")
-split down:                 user.vscode("workbench.action.moveEditorToBelowGroup")
-split left:                 user.vscode("workbench.action.moveEditorToLeftGroup")
-split right:                user.vscode("workbench.action.moveEditorToRightGroup")
-# focus up:                   user.vscode("workbench.action.focusAboveGroup")
-# focus down:                 user.vscode("workbench.action.focusBelowGroup")
-# focus left:                 user.vscode("workbench.action.focusLeftGroup")
-# focus right:                user.vscode("workbench.action.focusRightGroup")
-cross up:                   user.vscode("workbench.action.focusAboveGroup")
-cross down:                 user.vscode("workbench.action.focusBelowGroup")
-cross left:                 user.vscode("workbench.action.focusLeftGroup")
-cross right:                user.vscode("workbench.action.focusRightGroup")
-shrink width:               user.vscode("workbench.action.decreaseViewWidth")
-shrink height:              user.vscode("workbench.action.decreaseViewHeight")
-expand width:               user.vscode("workbench.action.increaseViewWidth")
-expand height:              user.vscode("workbench.action.increaseViewHeight")
-split flip:                 user.vscode("workbench.action.toggleEditorGroupLayout")
-split clear:                user.vscode("workbench.action.joinTwoGroups")
-split solo:                 user.vscode("workbench.action.editorLayoutSingle")
-split max:                  user.vscode("workbench.action.toggleMaximizeEditorGroup")
-#maximize:                   user.vscode("workbench.action.toggleEditorWidths")
-cross$:                     user.vscode("workbench.action.focusNextGroup")
+cross$:                     user.split_focus_next()
 open (cross | split):       key(alt-enter)
 
 # Sidebar
@@ -207,6 +187,7 @@ cursor skip:                user.vscode("editor.action.moveSelectionToNextFindMa
 build program:              user.vscode_build_program()
 run program:                user.vscode_run_program()
 debug program:              user.vscode_debug_program()
+# run and debug the currently selected entry from launch.json
 debug start:                user.vscode("workbench.action.debug.start")
 breakpoint:                 user.vscode("editor.debug.action.toggleBreakpoint")
 continue:                   user.vscode("workbench.action.debug.continue")
