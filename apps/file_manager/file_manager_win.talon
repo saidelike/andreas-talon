@@ -5,3 +5,11 @@ and tag: user.file_manager
 -
 
 go {user.letter} colon:     user.file_manager_go("{letter}:")
+
+file delete:                key(delete)
+file open:                  key(enter)
+# eg useful to edit an image in ms paint
+# https://superuser.com/questions/810352/is-there-a-keyboard-shortcut-to-edit-files-such-as-reg-bat-and-so-on
+file edit:
+    key(shift-f10)
+    key(e)
