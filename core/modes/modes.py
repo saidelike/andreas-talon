@@ -12,7 +12,8 @@ mode: dictation
 """
 
 mod.list("sleep_phrase", "Phrase used to sleep Talon")
-sleep_phrases = ["drowse"]
+# sleep_phrases = ["drowse"]
+sleep_phrases = ["drowsey"]
 ctx.lists["user.sleep_phrase"] = {sleep_phrases[0]}
 
 
