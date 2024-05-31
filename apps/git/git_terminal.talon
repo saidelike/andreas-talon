@@ -25,8 +25,10 @@ git fetch prune:            "git fetch --prune origin\n"
 git checkout last:          "git checkout -\n"
 
 git add:                    "git add "
+git add update:             "git add -u\n"
 
 git diff halt:              "git diff "
+git diff [cache|cached]:    "git diff --cached\n"
 git diff <user.text>:       "git diff {text}"
 
 git pull upstream:          "git pull upstream\n"
