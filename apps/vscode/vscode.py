@@ -146,7 +146,7 @@ class UserActions:
         actions.user.vscode("andreas.lineMiddle")
 
     # ----- Find / Replace -----
-    # inherited when "user.find" tag is enabled
+    # inherited when "user.find_and_replace" tag is enabled
     def find_everywhere(text: str = None):
         actions.user.vscode("workbench.action.findInFiles")
         if text:

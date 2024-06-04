@@ -2,9 +2,9 @@
 tag: browser
 -
 # in a browser, we want to be able to zoom, browse tabs, find text, and navigate forward/backward
-tag(): user.zoom
+# tag(): user.zoom
 tag(): user.tabs
-tag(): user.find
+tag(): user.find_and_replace
 tag(): user.navigation
 
 dot {user.domain}:          ".{domain}"

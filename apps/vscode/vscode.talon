@@ -5,13 +5,13 @@ app: vscode
 # we also want to add comments, and use git
 tag(): user.scroll
 tag(): user.navigation
-tag(): user.zoom
+# tag(): user.zoom
 tag(): user.tabs
-tag(): user.find
+tag(): user.find_and_replace
 tag(): user.extensions
 tag(): user.code_comments
 tag(): user.git
-tag(): user.split
+tag(): user.splits
 
 settings():
     user.scroll_speed = 0.9

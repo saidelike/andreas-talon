@@ -1,6 +1,6 @@
 # this file is only active when the "user"-defined "user.zoom" tag is enabled
-tag: user.zoom
--
+# tag: user.zoom
+# -
 
 # ----- Zoom -----
 ^zoom in$:                  edit.zoom_in()

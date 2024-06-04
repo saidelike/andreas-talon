@@ -2,12 +2,12 @@ from talon import Module, actions
 
 
 mod = Module()
-mod.tag("split")
+mod.tag("splits")
 
 
 @mod.action_class
 class Actions:
-    # ----- split creation -----
+    # Arrangement
     def split_move_up():
         """Move the current window to above split group"""
 
@@ -20,7 +20,7 @@ class Actions:
     def split_move_right():
         """Move the current window to right split group"""
 
-    # ----- Split navigation -----
+    # Navigation
     def split_focus_up():
         """Focus the split group above the current window"""
 
@@ -42,7 +42,7 @@ class Actions:
     def split_focus(number: int):
         """Focus the nth split group"""
 
-    # ----- Split resize -----
+    # Resizing
     def split_shrink_width():
         """Shrink the width of the current split group"""
 
@@ -55,7 +55,7 @@ class Actions:
     def split_expand_height():
         """Expand the height of the current split group"""
 
-    # ----- Split layout -----
+    # Layout
     def split_layout_toggle():
         """Mirror the split groups layout diagonally or toggle between horizontal/vertical layout"""
 

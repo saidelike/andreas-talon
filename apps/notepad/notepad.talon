@@ -3,4 +3,4 @@ app: notepad
 -
 
 # we want to be able to find text
-tag(): user.find
+tag(): user.find_and_replace

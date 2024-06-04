@@ -4,9 +4,9 @@ app: windows_terminal
 # this is a terminal after all and we want to be able to browse tabs, find text
 tag(): terminal
 tag(): user.tabs
-tag(): user.find
+tag(): user.find_and_replace
 
-# TODO: use the user.split tag and commands similar to vscode?
+# TODO: use the user.splits tag and commands similar to vscode?
 split cross:                key(alt-shift-d)
 split right:                key(alt-shift-+)
 split down:                 key(alt-shift--)

@@ -1,5 +1,5 @@
 app: notepadpp
 -
 
-# tag(): user.find
+# tag(): user.find_and_replace
 tag(): user.tabs

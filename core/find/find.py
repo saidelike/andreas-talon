@@ -1,11 +1,11 @@
 from talon import Module, actions
 
 mod = Module()
-# Declare a new global "user.find" tag
-mod.tag("find")
+# Declare a new global "user.find_and_replace" tag
+mod.tag("find_and_replace")
 
 
-# we define new actions that are "find" related
+# we define new actions that are "find_and_replace" related
 @mod.action_class
 class Actions:
     def find_file(text: str = None):
