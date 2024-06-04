@@ -2,8 +2,8 @@ from talon import Module
 
 mod = Module()
 
-# we define what it is to be a "repl" app
-mod.apps.repl = """
+# we define what it is to be a "talon_repl" app
+mod.apps.talon_repl = """
 os: windows
 and app.exe: cmd.exe
 

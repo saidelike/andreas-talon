@@ -1,5 +1,5 @@
-# this file is only active when the "user"-defined "repl" app is enabled
-app: repl
+# this file is only active when the "user"-defined "talon_repl" app is enabled
+app: talon_repl
 -
 
 events tail win browser:    "events.tail('/^((?!win|browser).)*$/')\n"
